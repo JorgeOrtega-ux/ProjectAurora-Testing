@@ -1,0 +1,32 @@
+[23-Nov-2025 17:06:41 America/Matamoros] Role Change: Admin(1) changed User(2) from user to administrator via IP 192.168.1.154
+[23-Nov-2025 17:06:44 America/Matamoros] Role Change: Admin(1) changed User(2) from administrator to moderator via IP 192.168.1.154
+[23-Nov-2025 17:06:48 America/Matamoros] Role Change: Admin(1) changed User(2) from moderator to user via IP 192.168.1.154
+[23-Nov-2025 17:06:55 America/Matamoros] Role Change: Admin(1) changed User(2) from user to user via IP 192.168.1.154
+[23-Nov-2025 17:06:56 America/Matamoros] Role Change: Admin(1) changed User(2) from user to user via IP 192.168.1.154
+[23-Nov-2025 17:06:56 America/Matamoros] Role Change: Admin(1) changed User(2) from user to user via IP 192.168.1.154
+[2025-11-27 10:59:28] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/ea759cb3-a7f3-44f6-b6b7-b883613b9e69.png -> New: default_reset
+[2025-11-27 10:59:30] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/ec7d0545-1e83-4f1c-81f8-78427df4447f.png -> New: default_reset
+[2025-11-27 10:59:32] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/c1f5dd09-90f2-4fff-bad8-48a38520d84c.png -> New: default_reset
+[2025-11-27 10:59:33] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/c70397e4-0b0e-40f0-a6b8-1e331d7997a8.png -> New: default_reset
+[2025-11-27 10:59:44] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/a6b70843-5e33-4951-b5f5-a03d12bda1a1.png -> New: assets/uploads/profile_pictures/custom/c602f7b3-62ed-40b7-a677-4644f9bf17d7.jpeg
+[2025-11-27 10:59:54] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/custom/c602f7b3-62ed-40b7-a677-4644f9bf17d7.jpeg -> New: default_reset
+[2025-11-27 11:03:37] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r -> New: user20251124_1409461rrh
+[2025-11-27 11:08:54] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461rrh -> New: user20251124_1409461r
+[2025-11-27 11:09:01] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r -> New: user20251124_1409461r
+[2025-11-27 11:09:09] Admin(ID:1) changed email for User(ID:2). Old: 11@gmail.com -> New: 11@gmail.com
+[2025-11-27 11:09:28] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/57dd3a6b-4605-4780-b5bc-e611600334e5.png -> New: default_reset
+[2025-11-27 11:10:12] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/5ab98d80-bed2-496a-98d8-915d72f6ec2d.png -> New: assets/uploads/profile_pictures/custom/a928eff1-a6da-4994-8038-4eb73d5ca168.PNG
+[2025-11-27 11:10:16] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/custom/a928eff1-a6da-4994-8038-4eb73d5ca168.PNG -> New: default_reset
+[2025-11-27 11:14:04] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r -> New: user20251124_1409461r1
+[2025-11-27 11:14:10] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/39f96928-9bf6-4a36-a18c-44fff25c821c.png -> New: assets/uploads/profile_pictures/custom/7bb9b886-24f2-4112-9d4b-d2bf3fb73c87.PNG
+[2025-11-27 11:14:17] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/custom/7bb9b886-24f2-4112-9d4b-d2bf3fb73c87.PNG -> New: default_reset
+[2025-11-27 11:32:44] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/f27650d1-f404-4b60-8155-d248d60af94a.png -> New: assets/uploads/profile_pictures/custom/0f8943e1-c3a7-4be5-8d03-deccaa54f09c.png
+[2025-11-27 13:46:39] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r1 -> New: user20251124_1409461r1r
+[2025-11-27 13:48:32] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/default/72c893c3-17d8-48ca-a72a-7394cb3300d4.png -> New: assets/uploads/profile_pictures/custom/40e2477d-7389-4d2f-a8a0-fea156d8e272.png
+[2025-11-27 13:54:38] Admin(ID:1) changed profile_picture for User(ID:2). Old: assets/uploads/profile_pictures/custom/40e2477d-7389-4d2f-a8a0-fea156d8e272.png -> New: default_reset
+[2025-11-27 13:54:45] Admin(ID:1) changed username for User(ID:1). Old: user20251124_131127w6 -> New: user20251124_131127w6gg
+[2025-11-27 13:55:01] Admin(ID:1) changed username for User(ID:1). Old: user20251124_131127w6gg -> New: user20251124_131127w6ggj
+[2025-11-27 13:55:10] Admin(ID:1) changed email for User(ID:1). Old: 12@gmail.com -> New: 121@gmail.com
+[2025-11-27 13:55:19] Admin(ID:1) changed email for User(ID:1). Old: 121@gmail.com -> New: 12@gmail.com
+[2025-11-27 14:06:01] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r1r -> New: user20251124_1409461r1rE
+[2025-11-27 14:06:43] Admin(ID:1) changed username for User(ID:2). Old: user20251124_1409461r1rE -> New: user20251124_1409461r1r

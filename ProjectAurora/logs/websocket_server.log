@@ -1,0 +1,2115 @@
+2025-11-24 11:50:30,111 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-24 11:50:30,228 - INFO - server listening on 0.0.0.0:8080
+2025-11-24 11:50:30,632 - INFO - connection open
+2025-11-24 11:50:30,648 - WARNING - Intento de conexi�n fallido. Token inv�lido.
+2025-11-24 11:50:31,511 - INFO - connection open
+2025-11-24 11:50:31,515 - WARNING - Intento de conexi�n fallido. Token inv�lido.
+2025-11-24 11:50:35,577 - INFO - connection open
+2025-11-24 11:50:35,584 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesi�n: e1jdgk3m...
+2025-11-24 11:51:20,053 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-24 11:51:20,122 - INFO - server listening on 0.0.0.0:8080
+2025-11-24 11:51:24,107 - INFO - connection open
+2025-11-24 11:51:24,111 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesi�n: e1jdgk3m...
+2025-11-24 11:52:57,751 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-24 11:52:57,788 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-24 11:52:58,183 - INFO - server listening on 0.0.0.0:8080
+2025-11-24 11:52:58,590 - INFO - connection open
+2025-11-24 11:52:58,593 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 11:53:01,246 - INFO - connection open
+2025-11-24 11:53:01,257 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:00:10,583 - INFO - connection open
+2025-11-24 12:00:10,586 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:04:52,261 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:04:54,845 - INFO - connection open
+2025-11-24 12:04:54,850 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:04:59,924 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:05:00,061 - INFO - connection open
+2025-11-24 12:05:00,074 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:05:11,950 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:05:12,307 - INFO - connection open
+2025-11-24 12:05:12,310 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:05:26,454 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:05:26,541 - INFO - connection open
+2025-11-24 12:05:26,543 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:07:07,006 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:07:07,093 - INFO - connection open
+2025-11-24 12:07:07,096 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:09:46,408 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:09:47,219 - INFO - connection open
+2025-11-24 12:09:47,222 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:09:47,763 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:09:48,233 - INFO - connection open
+2025-11-24 12:09:48,238 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:10:43,369 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:10:43,438 - INFO - connection open
+2025-11-24 12:10:43,464 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:12:17,746 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:12:18,006 - INFO - connection open
+2025-11-24 12:12:18,016 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:12:43,836 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:12:44,488 - INFO - connection open
+2025-11-24 12:12:44,492 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:12:45,268 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:12:45,718 - INFO - connection open
+2025-11-24 12:12:45,731 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:18:24,421 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:18:24,948 - INFO - connection open
+2025-11-24 12:18:24,952 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:18:25,264 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:18:25,622 - INFO - connection open
+2025-11-24 12:18:25,630 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:19:15,532 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:19:15,794 - INFO - connection open
+2025-11-24 12:19:15,820 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:19:17,536 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:19:17,765 - INFO - connection open
+2025-11-24 12:19:17,781 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:22:18,839 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:22:18,990 - INFO - connection open
+2025-11-24 12:22:19,013 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 12:22:24,054 - INFO - connection open
+2025-11-24 12:22:24,059 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 12:22:29,066 - INFO - connection open
+2025-11-24 12:22:29,074 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 12:22:34,087 - INFO - connection open
+2025-11-24 12:22:34,101 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 12:22:35,024 - INFO - connection open
+2025-11-24 12:22:35,029 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:22:40,340 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:22:40,417 - INFO - connection open
+2025-11-24 12:22:40,435 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:23:46,510 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:23:47,030 - INFO - connection open
+2025-11-24 12:23:47,038 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:23:47,357 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:23:47,677 - INFO - connection open
+2025-11-24 12:23:47,679 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 43dnubej...
+2025-11-24 12:24:02,691 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:24:03,433 - INFO - connection open
+2025-11-24 12:24:03,443 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:24:03,577 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:24:04,330 - INFO - connection open
+2025-11-24 12:24:04,354 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:25:23,806 - INFO - 📨 Notificación a Usuario 2: force_logout 
+2025-11-24 12:25:25,926 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:25:39,642 - INFO - connection open
+2025-11-24 12:25:39,645 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: qir20u1c...
+2025-11-24 12:26:12,855 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:26:13,372 - INFO - connection open
+2025-11-24 12:26:13,378 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:32:12,078 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:32:12,361 - INFO - connection open
+2025-11-24 12:32:12,384 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:32:19,702 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:32:19,797 - INFO - connection open
+2025-11-24 12:32:19,816 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:32:29,483 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:32:29,588 - INFO - connection open
+2025-11-24 12:32:29,605 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:32:33,069 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:32:33,159 - INFO - connection open
+2025-11-24 12:32:33,168 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:32:36,116 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:32:36,198 - INFO - connection open
+2025-11-24 12:32:36,202 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:33:20,762 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:33:20,830 - INFO - connection open
+2025-11-24 12:33:20,837 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:33:22,261 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:33:22,346 - INFO - connection open
+2025-11-24 12:33:22,351 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:33:23,087 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:33:23,175 - INFO - connection open
+2025-11-24 12:33:23,181 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:33:25,159 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:33:25,799 - INFO - connection open
+2025-11-24 12:33:25,803 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:35:51,809 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:35:52,005 - INFO - connection open
+2025-11-24 12:35:52,016 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:38:33,478 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:38:34,254 - INFO - connection open
+2025-11-24 12:38:34,266 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:39:56,215 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:39:56,417 - INFO - connection open
+2025-11-24 12:39:56,434 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:42:58,424 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:42:59,318 - INFO - connection open
+2025-11-24 12:42:59,336 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:48:37,035 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:48:37,995 - INFO - connection open
+2025-11-24 12:48:38,015 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:52:54,239 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:52:55,214 - INFO - connection open
+2025-11-24 12:52:55,271 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 12:57:12,657 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:57:12,755 - INFO - connection open
+2025-11-24 12:57:12,757 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: qir20u1c...
+2025-11-24 12:57:12,992 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:57:13,065 - INFO - connection open
+2025-11-24 12:57:13,070 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: qir20u1c...
+2025-11-24 12:57:15,297 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 12:58:31,623 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 12:58:31,935 - INFO - connection open
+2025-11-24 12:58:31,952 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: e1jdgk3m...
+2025-11-24 13:11:20,524 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:11:43,714 - INFO - connection open
+2025-11-24 13:11:43,726 - INFO - Usuario conectado: ID 1 | Rol: user | Sesión: omupa7hb...
+2025-11-24 13:11:55,364 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:11:55,604 - INFO - connection open
+2025-11-24 13:11:55,609 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:12:04,637 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:12:06,294 - INFO - connection open
+2025-11-24 13:12:06,296 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:12:44,788 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:12:45,251 - INFO - connection open
+2025-11-24 13:12:45,264 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:15:40,065 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:15:40,390 - INFO - connection open
+2025-11-24 13:15:40,448 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:15:45,336 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:15:45,584 - INFO - connection open
+2025-11-24 13:15:45,599 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:18:46,494 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:18:47,431 - INFO - connection open
+2025-11-24 13:18:47,499 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 13:21:46,046 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 13:21:46,301 - INFO - connection open
+2025-11-24 13:21:46,314 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:00:13,581 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:00:15,020 - INFO - connection open
+2025-11-24 14:00:15,025 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:00:23,873 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:00:23,994 - INFO - connection open
+2025-11-24 14:00:24,007 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:00:25,209 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:00:26,389 - INFO - connection open
+2025-11-24 14:00:26,396 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:00:45,062 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:00:45,554 - INFO - connection open
+2025-11-24 14:00:45,612 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:09:27,784 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:09:28,908 - INFO - connection open
+2025-11-24 14:09:28,916 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:10:01,146 - INFO - connection open
+2025-11-24 14:10:01,149 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: t166uira...
+2025-11-24 14:10:29,449 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 14:10:29,819 - INFO - connection open
+2025-11-24 14:10:29,821 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: t166uira...
+2025-11-24 14:29:22,226 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-24 14:29:22,264 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-24 14:29:22,749 - INFO - server listening on 0.0.0.0:8080
+2025-11-24 14:29:27,204 - INFO - connection open
+2025-11-24 14:29:27,209 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:32,529 - INFO - connection open
+2025-11-24 14:29:32,533 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:38,513 - INFO - connection open
+2025-11-24 14:29:38,522 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:44,588 - INFO - connection open
+2025-11-24 14:29:44,593 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:50,499 - INFO - connection open
+2025-11-24 14:29:50,504 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:55,513 - INFO - connection open
+2025-11-24 14:29:55,517 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-24 14:29:59,305 - INFO - connection open
+2025-11-24 14:29:59,308 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:31:49,241 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:31:49,392 - INFO - connection open
+2025-11-24 14:31:49,399 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:31:54,247 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:31:54,355 - INFO - connection open
+2025-11-24 14:31:54,357 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:33:24,691 - INFO - Usuario 1 desconectado completamente.
+2025-11-24 14:34:14,518 - INFO - connection open
+2025-11-24 14:34:14,522 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: ds4nj6ct...
+2025-11-24 14:34:23,169 - INFO - connection open
+2025-11-24 14:34:23,171 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: omupa7hb...
+2025-11-24 14:34:36,241 - INFO - 📨 Notificación a Usuario 2: friend_request 
+2025-11-24 14:34:43,939 - INFO - 📨 Notificación a Usuario 1: friend_accepted 
+2025-11-24 14:34:45,992 - INFO - Usuario 2 desconectado completamente.
+2025-11-24 14:34:47,093 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:52:09,039 - INFO - connection open
+2025-11-25 13:52:10,043 - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-11-25 13:52:10,956 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:53:08,738 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-25 13:53:08,780 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-25 13:53:09,132 - INFO - server listening on 0.0.0.0:8080
+2025-11-25 13:53:09,462 - INFO - connection open
+2025-11-25 13:53:09,465 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:53:22,392 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:53:22,405 - INFO - connection open
+2025-11-25 13:53:22,407 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:54:17,357 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:54:17,437 - INFO - connection open
+2025-11-25 13:54:17,441 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:54:38,041 - INFO - 📢 Notificación GLOBAL: system_status_update
+2025-11-25 13:54:38,169 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:54:38,258 - INFO - connection open
+2025-11-25 13:54:38,271 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:54:39,904 - INFO - 📢 Notificación GLOBAL: system_status_update
+2025-11-25 13:54:40,016 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:54:40,082 - INFO - connection open
+2025-11-25 13:54:40,085 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:54:41,658 - INFO - 📢 Notificación GLOBAL: system_status_update
+2025-11-25 13:54:41,783 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:54:41,859 - INFO - connection open
+2025-11-25 13:54:41,866 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:54:43,672 - INFO - 📢 Notificación GLOBAL: system_status_update
+2025-11-25 13:54:43,803 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:54:43,885 - INFO - connection open
+2025-11-25 13:54:43,887 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:58:06,798 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:58:06,867 - INFO - connection open
+2025-11-25 13:58:06,870 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 13:59:57,126 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 13:59:57,793 - INFO - connection open
+2025-11-25 13:59:57,798 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 14:03:21,310 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:03:22,042 - INFO - connection open
+2025-11-25 14:03:22,049 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 14:05:10,470 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:05:10,598 - INFO - connection open
+2025-11-25 14:05:10,601 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 14:05:11,523 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:05:12,259 - INFO - connection open
+2025-11-25 14:05:12,263 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 14:06:55,062 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:06:56,256 - INFO - connection open
+2025-11-25 14:06:56,262 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: lkqqssne...
+2025-11-25 14:09:07,503 - INFO - 📢 Notificación GLOBAL: force_logout
+2025-11-25 14:09:09,823 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:09:18,392 - INFO - connection open
+2025-11-25 14:09:18,395 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:10:35,824 - INFO - connection open
+2025-11-25 14:10:35,827 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 1uu9fgf2...
+2025-11-25 14:13:12,218 - INFO - Usuario 2 desconectado completamente.
+2025-11-25 14:13:21,373 - INFO - connection open
+2025-11-25 14:13:21,378 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 1uu9fgf2...
+2025-11-25 14:14:53,170 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:14:53,327 - INFO - connection open
+2025-11-25 14:14:53,336 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:24:44,732 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:24:46,037 - INFO - connection open
+2025-11-25 14:24:46,042 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:24:59,643 - INFO - Usuario 2 desconectado completamente.
+2025-11-25 14:25:04,406 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:25:04,535 - INFO - connection open
+2025-11-25 14:25:04,542 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:25:05,494 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:25:05,589 - INFO - connection open
+2025-11-25 14:25:05,603 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:25:08,807 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:25:08,896 - INFO - connection open
+2025-11-25 14:25:08,898 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:26:44,715 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:26:44,789 - INFO - connection open
+2025-11-25 14:26:44,794 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:27:31,009 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:27:31,154 - INFO - connection open
+2025-11-25 14:27:31,156 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:31:53,190 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:31:53,812 - INFO - connection open
+2025-11-25 14:31:53,815 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:32:24,178 - INFO - connection open
+2025-11-25 14:32:24,203 - INFO - Usuario conectado: ID 2 | Rol: user | Sesión: 103ok3ug...
+2025-11-25 14:35:39,393 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:35:39,488 - INFO - connection open
+2025-11-25 14:35:39,508 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:41:14,947 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:41:16,303 - INFO - connection open
+2025-11-25 14:41:16,307 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:41:42,331 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:41:43,229 - INFO - connection open
+2025-11-25 14:41:43,233 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:41:49,352 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:41:49,496 - INFO - connection open
+2025-11-25 14:41:49,499 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:42:03,042 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:42:03,227 - INFO - connection open
+2025-11-25 14:42:03,232 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:42:25,695 - INFO - Usuario 2 desconectado completamente.
+2025-11-25 14:42:52,631 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:42:52,744 - INFO - connection open
+2025-11-25 14:42:52,747 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:46:23,548 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:46:24,001 - INFO - connection open
+2025-11-25 14:46:24,008 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:46:24,994 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:46:26,292 - INFO - connection open
+2025-11-25 14:46:26,333 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:47:36,020 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:47:36,298 - INFO - connection open
+2025-11-25 14:47:36,310 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:47:59,096 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:48:00,424 - INFO - connection open
+2025-11-25 14:48:00,454 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:48:33,824 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:48:34,033 - INFO - connection open
+2025-11-25 14:48:34,109 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:50:28,245 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:50:29,217 - INFO - connection open
+2025-11-25 14:50:29,246 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:57:55,191 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:57:56,050 - INFO - connection open
+2025-11-25 14:57:56,082 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 14:58:01,106 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 14:58:01,206 - INFO - connection open
+2025-11-25 14:58:01,214 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:01:47,005 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:01:47,824 - INFO - connection open
+2025-11-25 15:01:47,830 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:03:46,034 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:03:46,816 - INFO - connection open
+2025-11-25 15:03:46,840 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:03:52,429 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:03:52,663 - INFO - connection open
+2025-11-25 15:03:52,685 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:04:04,956 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:04:05,151 - INFO - connection open
+2025-11-25 15:04:05,168 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:04:26,529 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:04:27,331 - INFO - connection open
+2025-11-25 15:04:27,361 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:04:51,788 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 15:04:52,038 - INFO - connection open
+2025-11-25 15:04:52,053 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 15:06:04,528 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:18:15,155 - INFO - connection open
+2025-11-25 23:18:15,360 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:22:51,423 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:22:52,578 - INFO - connection open
+2025-11-25 23:22:52,589 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:22:54,368 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:22:54,445 - INFO - connection open
+2025-11-25 23:22:54,454 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:23:30,287 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:23:30,470 - INFO - connection open
+2025-11-25 23:23:30,483 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:23:38,488 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:23:38,673 - INFO - connection open
+2025-11-25 23:23:38,685 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:23:47,144 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:23:47,310 - INFO - connection open
+2025-11-25 23:23:47,320 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:26:26,638 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:26:26,830 - INFO - connection open
+2025-11-25 23:26:26,847 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:26:33,526 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:26:33,696 - INFO - connection open
+2025-11-25 23:26:33,713 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:26:44,834 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:26:44,994 - INFO - connection open
+2025-11-25 23:26:45,016 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:27:24,412 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:27:25,389 - INFO - connection open
+2025-11-25 23:27:25,407 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:28:26,239 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:28:27,425 - INFO - connection open
+2025-11-25 23:28:27,465 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:28:30,103 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:28:30,312 - INFO - connection open
+2025-11-25 23:28:30,322 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:28:41,837 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:28:41,997 - INFO - connection open
+2025-11-25 23:28:42,055 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:28:44,446 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:28:44,654 - INFO - connection open
+2025-11-25 23:28:44,680 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:32:17,428 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:32:18,118 - INFO - connection open
+2025-11-25 23:32:18,144 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:34:51,389 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:34:52,086 - INFO - connection open
+2025-11-25 23:34:52,102 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:35:02,955 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:35:03,191 - INFO - connection open
+2025-11-25 23:35:03,208 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:35:27,972 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:35:28,293 - INFO - connection open
+2025-11-25 23:35:28,304 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:36:07,509 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:36:23,631 - INFO - connection open
+2025-11-25 23:36:23,646 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:40:24,320 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:40:25,477 - INFO - connection open
+2025-11-25 23:40:25,481 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:43,999 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:44,778 - INFO - connection open
+2025-11-25 23:42:44,800 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:52,834 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:53,053 - INFO - connection open
+2025-11-25 23:42:53,078 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:54,653 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:54,867 - INFO - connection open
+2025-11-25 23:42:54,874 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:55,232 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:55,416 - INFO - connection open
+2025-11-25 23:42:55,437 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:55,802 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:55,983 - INFO - connection open
+2025-11-25 23:42:56,003 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:56,212 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:56,380 - INFO - connection open
+2025-11-25 23:42:56,396 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:56,652 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:56,839 - INFO - connection open
+2025-11-25 23:42:56,850 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:57,016 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:57,180 - INFO - connection open
+2025-11-25 23:42:57,197 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:42:57,686 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:42:57,891 - INFO - connection open
+2025-11-25 23:42:57,913 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:49:57,314 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:49:59,437 - INFO - connection open
+2025-11-25 23:49:59,442 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:52:14,953 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:52:15,204 - INFO - connection open
+2025-11-25 23:52:15,214 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-25 23:58:02,064 - INFO - Usuario 1 desconectado completamente.
+2025-11-25 23:58:02,780 - INFO - connection open
+2025-11-25 23:58:02,782 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:00:55,990 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:00:56,754 - INFO - connection open
+2025-11-26 00:00:56,769 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:03:33,551 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:03:34,248 - INFO - connection open
+2025-11-26 00:03:34,277 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:06:35,094 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:06:35,436 - INFO - connection open
+2025-11-26 00:06:35,445 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:09:32,228 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:09:32,530 - INFO - connection open
+2025-11-26 00:09:32,534 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:13:10,653 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:13:11,195 - INFO - connection open
+2025-11-26 00:13:11,200 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:14:56,018 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:14:56,644 - INFO - connection open
+2025-11-26 00:14:56,657 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:17:26,081 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:17:26,448 - INFO - connection open
+2025-11-26 00:17:26,462 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:17:38,289 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:17:38,577 - INFO - connection open
+2025-11-26 00:17:38,654 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:20:41,112 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:20:41,393 - INFO - connection open
+2025-11-26 00:20:41,418 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:21:38,589 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:21:38,892 - INFO - connection open
+2025-11-26 00:21:38,904 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:21:40,945 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:21:41,788 - INFO - connection open
+2025-11-26 00:21:41,889 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:22:04,858 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:22:05,201 - INFO - connection open
+2025-11-26 00:22:05,219 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:23:07,649 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:23:07,899 - INFO - connection open
+2025-11-26 00:23:07,910 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:24:08,629 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:24:08,871 - INFO - connection open
+2025-11-26 00:24:08,877 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:24:47,683 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:24:47,971 - INFO - connection open
+2025-11-26 00:24:47,975 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:26:39,418 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:26:40,395 - INFO - connection open
+2025-11-26 00:26:40,472 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:27:44,267 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:27:44,663 - INFO - connection open
+2025-11-26 00:27:44,667 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:30:51,734 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:30:52,013 - INFO - connection open
+2025-11-26 00:30:52,018 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:31:05,440 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:31:06,904 - INFO - connection open
+2025-11-26 00:31:06,908 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:34:36,543 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:34:37,011 - INFO - connection open
+2025-11-26 00:34:37,028 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:34:55,159 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:34:55,392 - INFO - connection open
+2025-11-26 00:34:55,406 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:35:33,077 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:35:33,305 - INFO - connection open
+2025-11-26 00:35:33,312 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:35:37,094 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:35:37,332 - INFO - connection open
+2025-11-26 00:35:37,371 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:35:39,013 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:35:39,475 - INFO - connection open
+2025-11-26 00:35:39,499 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:35:55,030 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:35:55,308 - INFO - connection open
+2025-11-26 00:35:55,318 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:38:19,253 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:39:22,276 - INFO - connection open
+2025-11-26 00:39:22,289 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:41:10,525 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:41:11,276 - INFO - connection open
+2025-11-26 00:41:11,296 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:43:22,842 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:43:23,166 - INFO - connection open
+2025-11-26 00:43:23,177 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:44:33,662 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:44:33,955 - INFO - connection open
+2025-11-26 00:44:33,969 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:45:29,579 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:45:29,964 - INFO - connection open
+2025-11-26 00:45:29,976 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:49:22,720 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:49:23,087 - INFO - connection open
+2025-11-26 00:49:23,096 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:49:28,575 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:49:28,824 - INFO - connection open
+2025-11-26 00:49:28,835 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:49:34,320 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:49:34,569 - INFO - connection open
+2025-11-26 00:49:34,574 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:49:38,444 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:49:38,681 - INFO - connection open
+2025-11-26 00:49:38,694 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:50:06,985 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:52:12,083 - INFO - connection open
+2025-11-26 00:52:12,094 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 00:53:29,094 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 00:53:29,932 - INFO - connection open
+2025-11-26 00:53:29,958 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:03:51,394 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:03:53,230 - INFO - connection open
+2025-11-26 01:03:53,240 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:40,283 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:41,388 - INFO - connection open
+2025-11-26 01:04:41,396 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:45,912 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:46,241 - INFO - connection open
+2025-11-26 01:04:46,246 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:46,963 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:47,211 - INFO - connection open
+2025-11-26 01:04:47,231 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:47,744 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:48,026 - INFO - connection open
+2025-11-26 01:04:48,053 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:50,459 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:50,694 - INFO - connection open
+2025-11-26 01:04:50,707 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:51,254 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:51,536 - INFO - connection open
+2025-11-26 01:04:51,559 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:04:53,432 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:04:53,685 - INFO - connection open
+2025-11-26 01:04:53,703 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:07:15,878 - INFO - Usuario 1 desconectado completamente.
+2025-11-26 01:07:16,821 - INFO - connection open
+2025-11-26 01:07:16,856 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: rbasikmd...
+2025-11-26 01:10:54,544 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:09:35,147 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-27 10:09:35,192 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-27 10:09:35,742 - INFO - server listening on 0.0.0.0:8080
+2025-11-27 10:09:36,290 - INFO - connection open
+2025-11-27 10:09:36,296 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:09:43,773 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:09:43,838 - INFO - connection open
+2025-11-27 10:09:43,840 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:09:45,638 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:09:46,128 - INFO - connection open
+2025-11-27 10:09:46,138 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:16:37,901 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:16:38,917 - INFO - connection open
+2025-11-27 10:16:39,012 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:16:55,848 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:16:56,038 - INFO - connection open
+2025-11-27 10:16:56,052 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:16:59,710 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:16:59,855 - INFO - connection open
+2025-11-27 10:16:59,878 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:17:00,483 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:17:00,625 - INFO - connection open
+2025-11-27 10:17:00,644 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:19:59,928 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:00,099 - INFO - connection open
+2025-11-27 10:20:00,134 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:20:19,177 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:19,358 - INFO - connection open
+2025-11-27 10:20:19,380 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:20:26,005 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:26,574 - INFO - connection open
+2025-11-27 10:20:26,593 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:20:32,807 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:33,046 - INFO - connection open
+2025-11-27 10:20:33,059 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:20:38,228 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:38,387 - INFO - connection open
+2025-11-27 10:20:38,405 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:20:42,895 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:20:43,194 - INFO - connection open
+2025-11-27 10:20:43,237 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:11,053 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:11,274 - INFO - connection open
+2025-11-27 10:24:11,290 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:12,537 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:12,695 - INFO - connection open
+2025-11-27 10:24:12,718 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:13,396 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:13,563 - INFO - connection open
+2025-11-27 10:24:13,579 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:34,010 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:34,220 - INFO - connection open
+2025-11-27 10:24:34,231 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:34,776 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:34,983 - INFO - connection open
+2025-11-27 10:24:34,994 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:45,069 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:45,247 - INFO - connection open
+2025-11-27 10:24:45,267 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:46,143 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:46,317 - INFO - connection open
+2025-11-27 10:24:46,328 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:24:55,203 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:24:55,388 - INFO - connection open
+2025-11-27 10:24:55,405 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:25:16,516 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 10:25:27,349 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 10:26:41,576 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:26:41,771 - INFO - connection open
+2025-11-27 10:26:41,791 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:28:50,085 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:28:50,285 - INFO - connection open
+2025-11-27 10:28:50,303 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:29:04,678 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:29:04,935 - INFO - connection open
+2025-11-27 10:29:04,952 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:29:10,046 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:29:10,289 - INFO - connection open
+2025-11-27 10:29:10,307 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:31:49,918 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:31:50,119 - INFO - connection open
+2025-11-27 10:31:50,163 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:33:09,584 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:33:09,799 - INFO - connection open
+2025-11-27 10:33:09,811 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:33:35,233 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:33:35,406 - INFO - connection open
+2025-11-27 10:33:35,416 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:33:36,445 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:33:37,063 - INFO - connection open
+2025-11-27 10:33:37,081 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:34:22,086 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:34:22,393 - INFO - connection open
+2025-11-27 10:34:22,408 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:34:40,674 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:34:40,887 - INFO - connection open
+2025-11-27 10:34:40,986 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:34:55,621 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:34:55,885 - INFO - connection open
+2025-11-27 10:34:55,888 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:35:10,086 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:35:10,369 - INFO - connection open
+2025-11-27 10:35:10,403 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:36:58,922 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:36:59,139 - INFO - connection open
+2025-11-27 10:36:59,152 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:39:19,225 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:39:19,680 - INFO - connection open
+2025-11-27 10:39:19,698 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:40:36,636 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:40:36,915 - INFO - connection open
+2025-11-27 10:40:36,931 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:41:47,052 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:41:47,414 - INFO - connection open
+2025-11-27 10:41:47,436 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:59:06,171 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:59:06,922 - INFO - connection open
+2025-11-27 10:59:06,933 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 10:59:46,162 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 10:59:46,361 - INFO - connection open
+2025-11-27 10:59:46,379 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:03:39,331 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 11:03:39,428 - INFO - connection open
+2025-11-27 11:03:39,448 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:08:22,764 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 11:08:23,481 - INFO - connection open
+2025-11-27 11:08:23,491 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:08:46,008 - INFO - connection open
+2025-11-27 11:08:46,011 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: bm7rhqki...
+2025-11-27 11:08:55,021 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:09:04,396 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:09:10,727 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:09:28,253 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:10:12,800 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:10:16,818 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:13:52,043 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 11:13:52,550 - INFO - connection open
+2025-11-27 11:13:52,573 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:14:04,806 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:14:10,438 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:14:17,874 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:16:32,277 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 11:16:32,452 - INFO - connection open
+2025-11-27 11:16:32,454 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:31:51,349 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 11:31:52,373 - INFO - connection open
+2025-11-27 11:31:52,384 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: bm7rhqki...
+2025-11-27 11:32:44,333 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 11:32:49,093 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 11:32:49,206 - INFO - connection open
+2025-11-27 11:32:49,226 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: bm7rhqki...
+2025-11-27 11:32:55,148 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 11:32:55,402 - INFO - connection open
+2025-11-27 11:32:55,407 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 11:33:15,940 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 11:35:45,757 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 13:51:26,775 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-27 13:51:26,814 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-27 13:51:28,532 - INFO - server listening on 0.0.0.0:8080
+2025-11-27 13:51:29,012 - INFO - connection open
+2025-11-27 13:51:29,016 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:51:39,826 - INFO - connection open
+2025-11-27 13:51:39,831 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:51:54,014 - INFO - connection open
+2025-11-27 13:51:54,017 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:51:59,031 - INFO - connection open
+2025-11-27 13:51:59,033 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:00,714 - INFO - connection open
+2025-11-27 13:52:00,718 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:05,765 - INFO - connection open
+2025-11-27 13:52:05,768 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:11,720 - INFO - connection open
+2025-11-27 13:52:11,722 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:17,727 - INFO - connection open
+2025-11-27 13:52:17,730 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:23,726 - INFO - connection open
+2025-11-27 13:52:23,730 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:29,734 - INFO - connection open
+2025-11-27 13:52:29,739 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:35,229 - INFO - connection open
+2025-11-27 13:52:35,234 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:37,757 - INFO - connection open
+2025-11-27 13:52:37,773 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:42,779 - INFO - connection open
+2025-11-27 13:52:42,782 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:47,789 - INFO - connection open
+2025-11-27 13:52:47,942 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:52,948 - INFO - connection open
+2025-11-27 13:52:52,953 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:52:57,973 - INFO - connection open
+2025-11-27 13:52:57,977 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:53:02,992 - INFO - connection open
+2025-11-27 13:53:02,995 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:53:15,317 - INFO - ✅ Pool de conexiones a base de datos inicializado.
+2025-11-27 13:53:15,444 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-27 13:53:15,563 - INFO - server listening on 0.0.0.0:8080
+2025-11-27 13:53:16,047 - INFO - connection open
+2025-11-27 13:53:16,050 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 13:53:19,341 - INFO - connection open
+2025-11-27 13:53:19,345 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 13:54:45,982 - INFO - 📨 Notificación a Usuario 1: admin_notification 
+2025-11-27 13:55:01,214 - INFO - 📨 Notificación a Usuario 1: admin_notification 
+2025-11-27 13:55:12,454 - INFO - 📨 Notificación a Usuario 1: admin_notification 
+2025-11-27 13:55:19,563 - INFO - 📨 Notificación a Usuario 1: admin_notification 
+2025-11-27 14:00:30,085 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 14:00:44,053 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 14:02:21,742 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 14:02:30,490 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:02:30,642 - INFO - connection open
+2025-11-27 14:02:30,648 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:02:30,938 - INFO - connection open
+2025-11-27 14:02:31,012 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 14:02:31,283 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:02:31,346 - INFO - connection open
+2025-11-27 14:02:31,368 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:02:31,557 - INFO - connection open
+2025-11-27 14:02:31,561 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:02:31,928 - INFO - connection open
+2025-11-27 14:02:31,931 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 14:02:35,402 - INFO - 📢 Notificación GLOBAL: system_alert_update
+2025-11-27 14:03:40,702 - INFO - connection open
+2025-11-27 14:03:40,709 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: 2fq9bio4...
+2025-11-27 14:05:02,535 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:05:03,107 - INFO - connection open
+2025-11-27 14:05:03,151 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:04,336 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 14:05:04,822 - INFO - connection open
+2025-11-27 14:05:04,825 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: 2fq9bio4...
+2025-11-27 14:05:08,165 - INFO - connection open
+2025-11-27 14:05:08,167 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:13,175 - INFO - connection open
+2025-11-27 14:05:13,180 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:18,198 - INFO - connection open
+2025-11-27 14:05:18,203 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:23,212 - INFO - connection open
+2025-11-27 14:05:23,215 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:28,226 - INFO - connection open
+2025-11-27 14:05:28,229 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:33,247 - INFO - connection open
+2025-11-27 14:05:33,251 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:38,262 - INFO - connection open
+2025-11-27 14:05:38,266 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:43,280 - INFO - connection open
+2025-11-27 14:05:43,285 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:48,299 - INFO - connection open
+2025-11-27 14:05:48,304 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:53,310 - INFO - connection open
+2025-11-27 14:05:53,315 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:05:58,322 - INFO - connection open
+2025-11-27 14:05:58,325 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:01,312 - INFO - 📨 Notificación a Usuario 2: admin_notification 
+2025-11-27 14:06:02,891 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 14:06:02,949 - INFO - connection open
+2025-11-27 14:06:02,954 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: 2fq9bio4...
+2025-11-27 14:06:03,336 - INFO - connection open
+2025-11-27 14:06:03,341 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:08,362 - INFO - connection open
+2025-11-27 14:06:08,366 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:13,375 - INFO - connection open
+2025-11-27 14:06:13,379 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:15,722 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 14:06:18,397 - INFO - connection open
+2025-11-27 14:06:18,400 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:23,416 - INFO - connection open
+2025-11-27 14:06:23,503 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:28,514 - INFO - connection open
+2025-11-27 14:06:28,519 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:06:33,541 - INFO - connection open
+2025-11-27 14:06:33,575 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 14:07:21,030 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:07:21,114 - INFO - connection open
+2025-11-27 14:07:21,117 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: 1jldasd9...
+2025-11-27 14:08:24,517 - INFO - connection open
+2025-11-27 14:08:24,523 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: 8jl28km5...
+2025-11-27 14:08:49,169 - INFO - Usuario 2 desconectado completamente.
+2025-11-27 14:10:21,213 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:34:35,932 - INFO - connection open
+2025-11-27 14:34:35,948 - WARNING - Intento de conexión fallido. Token inválido.
+2025-11-27 14:35:29,098 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-27 14:35:29,137 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-27 14:35:29,222 - INFO - server listening on 0.0.0.0:8080
+2025-11-27 14:35:40,765 - INFO - connection open
+2025-11-27 14:35:40,870 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:02,594 - INFO - connection open
+2025-11-27 14:36:02,620 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:06,419 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:06,478 - INFO - connection open
+2025-11-27 14:36:06,484 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:44,665 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:44,742 - INFO - connection open
+2025-11-27 14:36:44,832 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:44,893 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:44,951 - INFO - connection open
+2025-11-27 14:36:44,957 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:45,047 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:45,102 - INFO - connection open
+2025-11-27 14:36:45,107 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:45,356 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:45,413 - INFO - connection open
+2025-11-27 14:36:45,415 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:45,648 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:45,710 - INFO - connection open
+2025-11-27 14:36:45,727 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:36:46,258 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:36:46,327 - INFO - connection open
+2025-11-27 14:36:46,331 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:37:18,830 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:37:18,895 - INFO - connection open
+2025-11-27 14:37:18,899 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:38:31,470 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:38:31,537 - INFO - connection open
+2025-11-27 14:38:31,546 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:39:52,320 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 14:39:52,393 - INFO - connection open
+2025-11-27 14:39:52,401 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 14:44:41,591 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 15:03:34,690 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-27 15:03:34,728 - INFO - === Servidor Aurora Iniciado (Async + Logging Profesional) ===
+2025-11-27 15:03:34,968 - INFO - server listening on 0.0.0.0:8080
+2025-11-27 15:03:47,530 - INFO - connection open
+2025-11-27 15:03:47,533 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 15:04:03,066 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 15:04:03,131 - INFO - connection open
+2025-11-27 15:04:03,136 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 15:08:21,236 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 15:08:21,304 - INFO - connection open
+2025-11-27 15:08:21,309 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 15:09:00,871 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:34:14,541 - INFO - connection open
+2025-11-27 23:34:14,553 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:48:55,690 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:48:57,026 - INFO - connection open
+2025-11-27 23:48:57,065 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:49:14,465 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:49:14,633 - INFO - connection open
+2025-11-27 23:49:14,640 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:49:39,821 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:49:40,082 - INFO - connection open
+2025-11-27 23:49:40,100 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:51:13,903 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:51:14,079 - INFO - connection open
+2025-11-27 23:51:14,099 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:52:26,438 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:52:26,614 - INFO - connection open
+2025-11-27 23:52:26,626 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:52:59,677 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:53:00,174 - INFO - connection open
+2025-11-27 23:53:00,200 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:53:11,873 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:53:12,001 - INFO - connection open
+2025-11-27 23:53:12,063 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:54:47,262 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:54:47,439 - INFO - connection open
+2025-11-27 23:54:47,511 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:54:57,976 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:54:58,154 - INFO - connection open
+2025-11-27 23:54:58,174 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:55:37,426 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:55:37,660 - INFO - connection open
+2025-11-27 23:55:37,686 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:55:51,268 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:55:51,437 - INFO - connection open
+2025-11-27 23:55:51,451 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:09,198 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:09,380 - INFO - connection open
+2025-11-27 23:56:09,411 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:14,201 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:14,376 - INFO - connection open
+2025-11-27 23:56:14,413 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:19,337 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:19,533 - INFO - connection open
+2025-11-27 23:56:19,556 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:28,712 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:28,975 - INFO - connection open
+2025-11-27 23:56:28,993 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:43,027 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:43,215 - INFO - connection open
+2025-11-27 23:56:43,248 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:56:53,323 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:56:53,540 - INFO - connection open
+2025-11-27 23:56:53,558 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:57:19,002 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:57:19,190 - INFO - connection open
+2025-11-27 23:57:19,201 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:57:26,160 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:57:26,365 - INFO - connection open
+2025-11-27 23:57:26,386 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:57:47,654 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:57:47,860 - INFO - connection open
+2025-11-27 23:57:47,878 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:58:03,307 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:58:03,500 - INFO - connection open
+2025-11-27 23:58:03,527 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:58:16,750 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:58:17,006 - INFO - connection open
+2025-11-27 23:58:17,021 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:58:26,100 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:58:26,358 - INFO - connection open
+2025-11-27 23:58:26,363 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:58:45,834 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:58:46,082 - INFO - connection open
+2025-11-27 23:58:46,152 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:59:40,859 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:59:41,063 - INFO - connection open
+2025-11-27 23:59:41,079 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-27 23:59:51,911 - INFO - Usuario 1 desconectado completamente.
+2025-11-27 23:59:52,173 - INFO - connection open
+2025-11-27 23:59:52,217 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:00:01,313 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:00:01,526 - INFO - connection open
+2025-11-28 00:00:01,558 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:00:19,853 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:00:20,067 - INFO - connection open
+2025-11-28 00:00:20,091 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:00:34,766 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:00:35,027 - INFO - connection open
+2025-11-28 00:00:35,053 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:00:56,291 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:00:56,490 - INFO - connection open
+2025-11-28 00:00:56,501 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:01:58,834 - INFO - connection open
+2025-11-28 00:01:58,842 - INFO - Usuario conectado: ID 2 | Rol: administrator | Sesión: pips9u1b...
+2025-11-28 00:02:31,932 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:02:32,281 - INFO - connection open
+2025-11-28 00:02:32,295 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:02:44,948 - INFO - Usuario 1 desconectado completamente.
+2025-11-28 00:02:45,171 - INFO - connection open
+2025-11-28 00:02:45,193 - INFO - Usuario conectado: ID 1 | Rol: founder | Sesión: r2sf4q96...
+2025-11-28 00:09:31,907 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 00:09:32,403 - INFO - === Servidor Aurora Iniciado (Chat Habilitado) ===
+2025-11-28 00:09:33,012 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 00:09:35,541 - INFO - connection open
+2025-11-28 00:09:35,542 - INFO - connection open
+2025-11-28 00:09:41,759 - INFO - connection open
+2025-11-28 00:09:41,788 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:09:46,489 - INFO - connection open
+2025-11-28 00:09:46,495 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:03,857 - INFO - connection open
+2025-11-28 00:10:03,860 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:20,574 - INFO - connection open
+2025-11-28 00:10:20,588 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:39,134 - INFO - connection open
+2025-11-28 00:10:39,140 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:39,941 - INFO - connection open
+2025-11-28 00:10:39,949 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:40,144 - INFO - connection open
+2025-11-28 00:10:40,151 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:40,474 - INFO - connection open
+2025-11-28 00:10:40,484 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:40,761 - INFO - connection open
+2025-11-28 00:10:40,769 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:42,150 - INFO - connection open
+2025-11-28 00:10:42,153 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:42,750 - INFO - connection open
+2025-11-28 00:10:42,755 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:43,157 - INFO - connection open
+2025-11-28 00:10:43,160 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:43,403 - INFO - connection open
+2025-11-28 00:10:43,407 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:43,623 - INFO - connection open
+2025-11-28 00:10:43,626 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:43,810 - INFO - connection open
+2025-11-28 00:10:43,818 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:44,056 - INFO - connection open
+2025-11-28 00:10:44,059 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:44,274 - INFO - connection open
+2025-11-28 00:10:44,277 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:44,435 - INFO - connection open
+2025-11-28 00:10:44,439 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:44,671 - INFO - connection open
+2025-11-28 00:10:44,674 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:44,856 - INFO - connection open
+2025-11-28 00:10:44,859 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:45,045 - INFO - connection open
+2025-11-28 00:10:45,056 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:45,434 - INFO - connection open
+2025-11-28 00:10:45,444 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:45,598 - INFO - connection open
+2025-11-28 00:10:45,607 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:45,934 - INFO - connection open
+2025-11-28 00:10:46,278 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:47,613 - INFO - connection open
+2025-11-28 00:10:47,639 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:47,752 - INFO - connection open
+2025-11-28 00:10:47,756 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:48,239 - INFO - connection open
+2025-11-28 00:10:48,242 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:48,434 - INFO - connection open
+2025-11-28 00:10:48,440 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:48,639 - INFO - connection open
+2025-11-28 00:10:48,642 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:48,842 - INFO - connection open
+2025-11-28 00:10:48,854 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:49,085 - INFO - connection open
+2025-11-28 00:10:49,087 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:49,258 - INFO - connection open
+2025-11-28 00:10:49,261 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:49,407 - INFO - connection open
+2025-11-28 00:10:49,411 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:49,606 - INFO - connection open
+2025-11-28 00:10:49,611 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:49,810 - INFO - connection open
+2025-11-28 00:10:49,816 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:50,160 - INFO - connection open
+2025-11-28 00:10:50,169 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:50,325 - INFO - connection open
+2025-11-28 00:10:50,328 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:50,612 - INFO - connection open
+2025-11-28 00:10:50,620 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:50,754 - INFO - connection open
+2025-11-28 00:10:50,757 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:50,926 - INFO - connection open
+2025-11-28 00:10:50,930 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:51,190 - INFO - connection open
+2025-11-28 00:10:51,194 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:51,343 - INFO - connection open
+2025-11-28 00:10:51,351 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:51,507 - INFO - connection open
+2025-11-28 00:10:51,510 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:51,768 - INFO - connection open
+2025-11-28 00:10:51,772 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:51,975 - INFO - connection open
+2025-11-28 00:10:51,982 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 00:10:53,265 - INFO - connection open
+2025-11-28 00:10:53,724 - INFO - connection open
+2025-11-28 00:10:53,746 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:10:55,434 - INFO - connection open
+2025-11-28 00:10:55,441 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:10:55,727 - INFO - connection open
+2025-11-28 00:10:55,733 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:10:56,302 - INFO - connection open
+2025-11-28 00:10:56,306 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:10:58,295 - INFO - connection open
+2025-11-28 00:10:58,300 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 00:10:59,711 - INFO - connection open
+2025-11-28 00:10:59,717 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:48:50,261 - INFO - connection open
+2025-11-28 10:48:50,276 - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-11-28 10:48:50,464 - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-11-28 10:48:50,468 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:49:27,095 - INFO - connection open
+2025-11-28 10:49:27,099 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:49:28,818 - INFO - connection open
+2025-11-28 10:49:28,826 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:49:29,719 - INFO - connection open
+2025-11-28 10:49:29,726 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:50:03,356 - INFO - connection open
+2025-11-28 10:50:03,390 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:50:22,591 - INFO - connection open
+2025-11-28 10:50:22,595 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:51:21,283 - INFO - connection open
+2025-11-28 10:51:21,292 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 10:51:32,901 - INFO - connection open
+2025-11-28 10:51:32,908 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:52:20,847 - INFO - connection open
+2025-11-28 10:52:20,852 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 10:54:08,910 - INFO - connection open
+2025-11-28 10:54:08,924 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:57:28,702 - INFO - connection open
+2025-11-28 10:57:28,709 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 10:58:26,618 - INFO - connection open
+2025-11-28 10:58:26,625 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:06:06,306 - INFO - connection open
+2025-11-28 11:06:06,317 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:06:19,102 - INFO - connection open
+2025-11-28 11:06:19,106 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:06:30,921 - INFO - connection open
+2025-11-28 11:06:30,930 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:07:08,046 - INFO - connection open
+2025-11-28 11:07:08,052 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:07:12,489 - INFO - connection open
+2025-11-28 11:07:12,508 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:09:17,317 - INFO - connection open
+2025-11-28 11:09:17,324 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:09:18,809 - INFO - connection open
+2025-11-28 11:09:18,812 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:11:30,864 - INFO - connection open
+2025-11-28 11:11:30,867 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:11:46,557 - INFO - connection open
+2025-11-28 11:11:46,567 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:11:52,349 - INFO - connection open
+2025-11-28 11:11:52,357 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:19:49,192 - INFO - connection open
+2025-11-28 11:19:49,356 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:21:42,016 - INFO - connection open
+2025-11-28 11:21:42,062 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:21:50,004 - INFO - connection open
+2025-11-28 11:21:50,007 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:22:26,897 - INFO - connection open
+2025-11-28 11:22:26,901 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:22:28,202 - INFO - connection open
+2025-11-28 11:22:28,205 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:22:46,732 - INFO - connection open
+2025-11-28 11:22:46,735 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:26:49,617 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 11:26:49,654 - INFO - === Servidor Aurora Iniciado (Chat Habilitado) ===
+2025-11-28 11:26:50,610 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 11:26:52,221 - INFO - connection open
+2025-11-28 11:26:52,224 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:26:55,477 - INFO - connection open
+2025-11-28 11:26:56,120 - INFO - connection open
+2025-11-28 11:26:56,125 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:42:47,227 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 11:42:47,236 - INFO - === Servidor Aurora Iniciado (Chat Habilitado) ===
+2025-11-28 11:42:47,313 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 11:42:47,415 - INFO - connection open
+2025-11-28 11:42:50,427 - INFO - connection open
+2025-11-28 11:44:14,922 - INFO - connection open
+2025-11-28 11:44:14,938 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:46:20,784 - INFO - connection open
+2025-11-28 11:46:20,790 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:46:47,541 - INFO - connection open
+2025-11-28 11:46:47,550 - INFO - Usuario conectado: ID 2 | Rol: administrator
+2025-11-28 11:56:08,237 - INFO - connection open
+2025-11-28 11:56:08,245 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:56:36,328 - INFO - connection open
+2025-11-28 11:56:36,331 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 11:57:24,813 - INFO - connection open
+2025-11-28 11:57:24,824 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 12:02:00,668 - INFO - connection open
+2025-11-28 12:02:00,746 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 13:34:26,003 - INFO - connection open
+2025-11-28 13:34:26,017 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 13:42:47,371 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 13:42:47,409 - INFO - === Servidor Aurora Iniciado (Chat Habilitado) ===
+2025-11-28 13:42:48,406 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 13:42:53,416 - INFO - connection open
+2025-11-28 13:43:08,127 - INFO - connection open
+2025-11-28 13:43:08,132 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 13:44:49,393 - INFO - connection open
+2025-11-28 13:44:49,396 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 13:44:53,431 - INFO - connection open
+2025-11-28 13:44:53,501 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 13:45:37,923 - INFO - connection open
+2025-11-28 13:45:37,928 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 13:45:43,159 - INFO - connection open
+2025-11-28 13:45:43,163 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 13:45:44,716 - INFO - connection open
+2025-11-28 13:45:44,735 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 13:45:55,537 - INFO - connection open
+2025-11-28 13:45:55,563 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 13:45:55,841 - INFO - connection open
+2025-11-28 13:45:55,893 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 13:55:13,634 - INFO - connection open
+2025-11-28 13:55:13,657 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:01:39,041 - INFO - connection open
+2025-11-28 14:01:39,056 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:11:56,677 - INFO - connection open
+2025-11-28 14:11:56,684 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:12:40,409 - INFO - connection open
+2025-11-28 14:12:40,734 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:15:00,750 - INFO - connection open
+2025-11-28 14:15:00,752 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:16:20,625 - INFO - connection open
+2025-11-28 14:16:20,630 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:16:48,458 - INFO - connection open
+2025-11-28 14:16:48,468 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:22:11,123 - INFO - connection open
+2025-11-28 14:22:11,136 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:38:44,360 - INFO - connection open
+2025-11-28 14:38:44,363 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:01,884 - INFO - connection open
+2025-11-28 14:44:01,887 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:19,844 - INFO - connection open
+2025-11-28 14:44:19,886 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:23,569 - INFO - connection open
+2025-11-28 14:44:23,576 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:45,567 - INFO - connection open
+2025-11-28 14:44:45,570 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:49,022 - INFO - connection open
+2025-11-28 14:44:49,028 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:49,762 - INFO - connection open
+2025-11-28 14:44:49,770 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:56,807 - INFO - connection open
+2025-11-28 14:44:56,812 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:58,413 - INFO - connection open
+2025-11-28 14:44:58,429 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:44:59,961 - INFO - connection open
+2025-11-28 14:44:59,964 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:45:02,026 - INFO - connection open
+2025-11-28 14:45:02,032 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:53:15,305 - INFO - connection open
+2025-11-28 14:53:15,313 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:53:40,479 - INFO - connection open
+2025-11-28 14:53:40,620 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:53:41,606 - INFO - connection open
+2025-11-28 14:53:41,608 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:53:42,286 - INFO - connection open
+2025-11-28 14:53:42,293 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:38,088 - INFO - connection open
+2025-11-28 14:54:38,090 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:49,724 - INFO - connection open
+2025-11-28 14:54:49,728 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:50,213 - INFO - connection open
+2025-11-28 14:54:50,227 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:50,396 - INFO - connection open
+2025-11-28 14:54:50,402 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:50,780 - INFO - connection open
+2025-11-28 14:54:50,790 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:50,927 - INFO - connection open
+2025-11-28 14:54:50,952 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:51,320 - INFO - connection open
+2025-11-28 14:54:51,364 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:51,521 - INFO - connection open
+2025-11-28 14:54:51,587 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:51,777 - INFO - connection open
+2025-11-28 14:54:51,789 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:52,017 - INFO - connection open
+2025-11-28 14:54:52,022 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:52,284 - INFO - connection open
+2025-11-28 14:54:52,292 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:52,476 - INFO - connection open
+2025-11-28 14:54:52,569 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:52,751 - INFO - connection open
+2025-11-28 14:54:52,822 - INFO - connection open
+2025-11-28 14:54:52,825 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:54:53,413 - INFO - connection open
+2025-11-28 14:54:53,421 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 14:56:58,954 - INFO - connection open
+2025-11-28 14:56:58,960 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:24:06,348 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 15:24:06,358 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs) ===
+2025-11-28 15:24:07,387 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 15:24:11,476 - INFO - connection open
+2025-11-28 15:24:11,477 - INFO - connection open
+2025-11-28 15:24:29,313 - INFO - connection open
+2025-11-28 15:24:29,430 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:24:51,153 - INFO - connection open
+2025-11-28 15:24:51,163 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:25:02,290 - INFO - connection open
+2025-11-28 15:25:02,414 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:25:19,251 - INFO - connection open
+2025-11-28 15:25:19,260 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:25:39,613 - INFO - connection open
+2025-11-28 15:25:39,628 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:25:49,514 - INFO - connection open
+2025-11-28 15:25:49,531 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:25:51,135 - INFO - connection open
+2025-11-28 15:25:51,142 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:39:02,880 - INFO - connection open
+2025-11-28 15:39:02,885 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:39:09,404 - INFO - connection open
+2025-11-28 15:39:09,408 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:39:48,956 - INFO - connection open
+2025-11-28 15:39:48,959 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:39:49,623 - INFO - connection open
+2025-11-28 15:39:49,627 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:40:04,641 - INFO - connection open
+2025-11-28 15:40:04,644 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:40:05,205 - INFO - connection open
+2025-11-28 15:40:05,209 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:40:05,579 - INFO - connection open
+2025-11-28 15:40:05,586 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:41:32,208 - INFO - connection open
+2025-11-28 15:41:32,213 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 15:52:38,514 - INFO - connection open
+2025-11-28 15:52:38,531 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:53:49,792 - INFO - connection open
+2025-11-28 15:53:49,799 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:55:05,909 - INFO - connection open
+2025-11-28 15:55:05,917 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:55:34,310 - INFO - connection open
+2025-11-28 15:55:34,319 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 15:59:17,623 - INFO - connection open
+2025-11-28 15:59:17,680 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:04:41,326 - INFO - connection open
+2025-11-28 16:04:41,332 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:07:15,520 - INFO - connection open
+2025-11-28 16:07:15,580 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:07:38,960 - INFO - connection open
+2025-11-28 16:07:38,991 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:10:51,938 - INFO - connection open
+2025-11-28 16:10:51,951 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:11:11,505 - INFO - connection open
+2025-11-28 16:11:11,650 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:24:06,635 - INFO - connection open
+2025-11-28 16:24:06,638 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:29:07,093 - INFO - connection open
+2025-11-28 16:29:07,100 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:29:08,361 - INFO - connection open
+2025-11-28 16:29:08,366 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:29:09,215 - INFO - connection open
+2025-11-28 16:29:09,249 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:34:40,029 - INFO - connection open
+2025-11-28 16:34:40,164 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:34:50,900 - INFO - connection open
+2025-11-28 16:34:51,063 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 16:35:09,403 - INFO - connection open
+2025-11-28 16:35:09,410 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:35:18,539 - INFO - connection open
+2025-11-28 16:35:18,541 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:43:03,638 - INFO - connection open
+2025-11-28 16:43:03,646 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:43:23,940 - INFO - connection open
+2025-11-28 16:43:23,945 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:43:33,550 - INFO - connection open
+2025-11-28 16:43:33,554 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:43:42,554 - INFO - connection open
+2025-11-28 16:43:42,560 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:44:09,977 - INFO - connection open
+2025-11-28 16:44:10,025 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:44:56,102 - WARNING - Usuario 2 intentó enviar DM a UUID inexistente: 21b54873-3e24-4a66-9ec3-d63e56d202aa
+2025-11-28 16:44:59,527 - WARNING - Usuario 2 intentó enviar DM a UUID inexistente: 21b54873-3e24-4a66-9ec3-d63e56d202aa
+2025-11-28 16:44:59,839 - WARNING - Usuario 2 intentó enviar DM a UUID inexistente: 21b54873-3e24-4a66-9ec3-d63e56d202aa
+2025-11-28 16:45:20,703 - INFO - connection open
+2025-11-28 16:45:20,706 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 16:45:41,882 - INFO - connection open
+2025-11-28 16:45:41,889 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 16:46:31,678 - INFO - connection open
+2025-11-28 16:46:31,685 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:46:45,598 - INFO - connection open
+2025-11-28 16:46:45,629 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 16:57:23,068 - INFO - connection open
+2025-11-28 16:57:23,090 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:00:31,186 - INFO - connection open
+2025-11-28 17:00:31,261 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:06:23,570 - INFO - connection open
+2025-11-28 17:06:23,588 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:06:41,656 - INFO - connection open
+2025-11-28 17:06:41,674 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:06:50,541 - INFO - connection open
+2025-11-28 17:06:50,568 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:07:13,855 - INFO - connection open
+2025-11-28 17:07:13,875 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:07:36,564 - INFO - connection open
+2025-11-28 17:07:36,566 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:08:20,636 - INFO - connection open
+2025-11-28 17:08:20,641 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:08:21,758 - INFO - connection open
+2025-11-28 17:08:21,780 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:08:22,640 - INFO - connection open
+2025-11-28 17:08:22,659 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:12:56,055 - INFO - connection open
+2025-11-28 17:12:56,103 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:14:21,633 - INFO - connection open
+2025-11-28 17:14:21,642 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:31,155 - INFO - connection open
+2025-11-28 17:19:31,159 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:36,972 - INFO - connection open
+2025-11-28 17:19:36,980 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:37,727 - INFO - connection open
+2025-11-28 17:19:37,732 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:38,963 - INFO - connection open
+2025-11-28 17:19:39,185 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:40,036 - INFO - connection open
+2025-11-28 17:19:40,040 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:40,715 - INFO - connection open
+2025-11-28 17:19:40,724 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:41,464 - INFO - connection open
+2025-11-28 17:19:41,503 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:42,135 - INFO - connection open
+2025-11-28 17:19:42,139 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:42,879 - INFO - connection open
+2025-11-28 17:19:42,906 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:19:43,576 - INFO - connection open
+2025-11-28 17:19:43,585 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:20:40,552 - INFO - connection open
+2025-11-28 17:20:40,566 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:21:01,482 - INFO - connection open
+2025-11-28 17:21:01,536 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:21:31,768 - INFO - connection open
+2025-11-28 17:21:31,773 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:21:50,497 - INFO - connection open
+2025-11-28 17:21:50,503 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:22:15,694 - INFO - connection open
+2025-11-28 17:22:15,709 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:22:44,335 - INFO - connection open
+2025-11-28 17:22:44,340 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:23:06,491 - INFO - connection open
+2025-11-28 17:23:06,501 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:23:54,395 - INFO - connection open
+2025-11-28 17:23:54,439 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:30:14,302 - INFO - connection open
+2025-11-28 17:30:14,328 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:54:19,499 - INFO - connection open
+2025-11-28 17:54:19,602 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:54:53,454 - INFO - connection open
+2025-11-28 17:54:53,460 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 17:56:45,114 - INFO - connection open
+2025-11-28 17:56:45,118 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 17:57:02,551 - INFO - connection open
+2025-11-28 17:57:02,604 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 17:57:19,147 - INFO - connection open
+2025-11-28 17:57:19,152 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:03:15,092 - INFO - connection open
+2025-11-28 18:03:15,201 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:03:17,382 - INFO - connection open
+2025-11-28 18:03:17,386 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:04:19,970 - INFO - connection open
+2025-11-28 18:04:19,974 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:07:01,769 - INFO - connection open
+2025-11-28 18:07:01,772 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:07:20,258 - INFO - connection open
+2025-11-28 18:07:20,271 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:13:18,835 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 18:13:18,873 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs) ===
+2025-11-28 18:13:19,522 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 18:13:20,433 - INFO - connection open
+2025-11-28 18:13:20,434 - INFO - connection open
+2025-11-28 18:13:35,814 - INFO - connection open
+2025-11-28 18:13:35,866 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:13:35,938 - INFO - connection open
+2025-11-28 18:13:35,948 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:13:46,984 - INFO - connection open
+2025-11-28 18:13:46,991 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:13:56,103 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:57,552 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:58,104 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:58,327 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:58,599 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:58,835 - WARNING - Bloqueo de seguridad: Usuario 2 intentó enviar mensaje a 1 sin permiso (Privacidad: friends, Estado: None).
+2025-11-28 18:13:59,776 - INFO - connection open
+2025-11-28 18:13:59,781 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:18:40,328 - INFO - connection open
+2025-11-28 18:18:40,333 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:18:40,424 - INFO - connection open
+2025-11-28 18:18:40,433 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:18:48,330 - INFO - connection open
+2025-11-28 18:18:48,335 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:18:48,739 - INFO - connection open
+2025-11-28 18:18:48,746 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:19:09,061 - INFO - connection open
+2025-11-28 18:19:09,066 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:19:12,655 - INFO - connection open
+2025-11-28 18:19:12,659 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:24:25,267 - INFO - connection open
+2025-11-28 18:24:25,273 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:24:25,785 - INFO - connection open
+2025-11-28 18:24:25,790 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:24:43,576 - INFO - connection open
+2025-11-28 18:24:43,586 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:28:02,624 - INFO - connection open
+2025-11-28 18:28:02,630 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:28:04,881 - INFO - connection open
+2025-11-28 18:28:04,887 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:30:55,627 - INFO - connection open
+2025-11-28 18:30:55,640 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:30:55,822 - INFO - connection open
+2025-11-28 18:30:55,833 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:31:08,332 - INFO - connection open
+2025-11-28 18:31:08,340 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:31:09,381 - INFO - connection open
+2025-11-28 18:31:09,386 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:31:31,563 - INFO - connection open
+2025-11-28 18:31:31,576 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:31:38,827 - INFO - connection open
+2025-11-28 18:31:38,863 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:31:48,204 - INFO - connection open
+2025-11-28 18:31:48,207 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:32:02,557 - INFO - connection open
+2025-11-28 18:32:02,561 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:34:46,590 - INFO - connection open
+2025-11-28 18:34:46,606 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:35:39,790 - INFO - connection open
+2025-11-28 18:35:39,792 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:35:42,892 - INFO - connection open
+2025-11-28 18:35:42,900 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:35:52,561 - INFO - connection open
+2025-11-28 18:35:52,563 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:39:02,088 - INFO - connection open
+2025-11-28 18:39:02,093 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:39:08,914 - INFO - connection open
+2025-11-28 18:39:08,916 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:39:22,063 - INFO - connection open
+2025-11-28 18:39:22,068 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:41:51,498 - INFO - connection open
+2025-11-28 18:41:51,508 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:41:53,617 - INFO - connection open
+2025-11-28 18:41:53,625 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:42:02,996 - INFO - connection open
+2025-11-28 18:42:03,001 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:42:03,609 - INFO - connection open
+2025-11-28 18:42:03,612 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:42:04,226 - INFO - connection open
+2025-11-28 18:42:04,230 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:49:09,166 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 18:49:09,205 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 18:49:10,033 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 18:49:10,947 - INFO - connection open
+2025-11-28 18:49:10,951 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:49:12,795 - INFO - connection open
+2025-11-28 18:49:12,800 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:49:16,557 - INFO - connection open
+2025-11-28 18:49:16,567 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:49:16,844 - INFO - connection open
+2025-11-28 18:49:16,860 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:54:10,422 - INFO - connection open
+2025-11-28 18:54:10,430 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:54:18,771 - INFO - connection open
+2025-11-28 18:54:18,774 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:54:23,703 - INFO - connection open
+2025-11-28 18:54:23,710 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:54:30,137 - INFO - connection open
+2025-11-28 18:54:30,140 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:54:34,354 - INFO - connection open
+2025-11-28 18:54:34,362 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:59:11,813 - INFO - connection open
+2025-11-28 18:59:11,831 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 18:59:11,950 - INFO - connection open
+2025-11-28 18:59:11,960 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 18:59:19,918 - INFO - connection open
+2025-11-28 18:59:19,926 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:05:58,737 - INFO - connection open
+2025-11-28 19:05:58,769 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:06:05,936 - INFO - connection open
+2025-11-28 19:06:05,941 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:06:21,507 - INFO - connection open
+2025-11-28 19:06:21,512 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:06:35,014 - INFO - connection open
+2025-11-28 19:06:35,022 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:06:52,362 - INFO - connection open
+2025-11-28 19:06:52,366 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:07:26,707 - INFO - connection open
+2025-11-28 19:07:26,714 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:07:47,728 - INFO - connection open
+2025-11-28 19:07:47,736 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:08:06,099 - INFO - connection open
+2025-11-28 19:08:06,108 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:08:08,779 - INFO - connection open
+2025-11-28 19:08:08,786 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:08:14,458 - INFO - connection open
+2025-11-28 19:08:14,461 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:08:16,021 - INFO - connection open
+2025-11-28 19:08:16,025 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:11:51,110 - INFO - connection open
+2025-11-28 19:11:51,121 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:12:12,911 - INFO - connection open
+2025-11-28 19:12:12,919 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:12:33,879 - INFO - connection open
+2025-11-28 19:12:33,885 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:12:52,689 - INFO - connection open
+2025-11-28 19:12:52,691 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 19:12:57,064 - INFO - connection open
+2025-11-28 19:12:57,100 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:13:53,122 - INFO - connection open
+2025-11-28 19:13:53,129 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:14:17,673 - INFO - connection open
+2025-11-28 19:14:17,797 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:14:22,016 - INFO - connection open
+2025-11-28 19:14:22,023 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:24:32,305 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 19:24:32,317 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing + Anti-Spam) ===
+2025-11-28 19:24:32,555 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 19:24:32,922 - INFO - connection open
+2025-11-28 19:24:33,413 - INFO - connection open
+2025-11-28 19:24:45,817 - INFO - connection open
+2025-11-28 19:24:45,878 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:27:34,188 - INFO - connection open
+2025-11-28 19:27:34,199 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:27:39,989 - INFO - connection open
+2025-11-28 19:27:39,993 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:27:43,829 - INFO - connection open
+2025-11-28 19:27:43,834 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:28:29,156 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 19:28:29,194 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing + Anti-Spam) ===
+2025-11-28 19:28:29,396 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 19:28:50,401 - INFO - connection open
+2025-11-28 19:28:50,409 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:29:37,619 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 19:29:37,628 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 19:29:37,755 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 19:29:39,418 - INFO - connection open
+2025-11-28 19:29:39,423 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:30:41,667 - INFO - connection open
+2025-11-28 19:30:41,674 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:39:18,819 - INFO - connection open
+2025-11-28 19:39:18,874 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:39:41,709 - INFO - connection open
+2025-11-28 19:39:41,718 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-28 19:43:58,900 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 19:43:58,937 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 19:44:02,674 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 19:44:02,952 - INFO - connection open
+2025-11-28 19:44:08,151 - INFO - connection open
+2025-11-28 19:44:08,157 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:48:01,648 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 19:48:01,686 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 19:48:01,912 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 19:48:19,699 - INFO - connection open
+2025-11-28 19:48:19,706 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 19:53:44,899 - INFO - connection open
+2025-11-28 19:53:44,906 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:10:36,346 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 20:10:36,389 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 20:10:37,276 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 20:10:40,560 - INFO - connection open
+2025-11-28 20:10:59,390 - INFO - connection open
+2025-11-28 20:10:59,438 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:11:05,201 - INFO - connection open
+2025-11-28 20:11:05,296 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:11:35,279 - INFO - connection open
+2025-11-28 20:11:35,293 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:13:12,811 - INFO - connection open
+2025-11-28 20:13:12,825 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:14:55,268 - INFO - connection open
+2025-11-28 20:14:55,272 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:15:32,226 - INFO - connection open
+2025-11-28 20:15:32,231 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:15:37,553 - INFO - connection open
+2025-11-28 20:15:37,556 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:15:43,741 - INFO - connection open
+2025-11-28 20:15:43,746 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:15:47,063 - INFO - connection open
+2025-11-28 20:15:47,082 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:16:25,299 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-28 20:16:25,308 - INFO - === Servidor Aurora Iniciado (Híbrido: Chat + DMs + Typing) ===
+2025-11-28 20:16:25,697 - INFO - server listening on 0.0.0.0:8080
+2025-11-28 20:16:27,506 - INFO - connection open
+2025-11-28 20:16:27,510 - INFO - connection open
+2025-11-28 20:16:27,512 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:16:27,516 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:17:00,334 - INFO - connection open
+2025-11-28 20:17:00,341 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:17:24,341 - INFO - connection open
+2025-11-28 20:17:24,346 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:17:33,289 - INFO - connection open
+2025-11-28 20:17:33,293 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:19:44,708 - INFO - connection open
+2025-11-28 20:19:44,715 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:19:52,146 - INFO - connection open
+2025-11-28 20:19:52,150 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:19:58,749 - INFO - connection open
+2025-11-28 20:19:58,759 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:19:59,851 - INFO - connection open
+2025-11-28 20:19:59,857 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:20:00,844 - INFO - connection open
+2025-11-28 20:20:00,850 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:20:04,339 - INFO - connection open
+2025-11-28 20:20:04,341 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:20:41,224 - INFO - connection open
+2025-11-28 20:20:41,231 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:25:32,324 - INFO - connection open
+2025-11-28 20:25:32,335 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:25:36,554 - INFO - connection open
+2025-11-28 20:25:36,566 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:25:50,915 - INFO - connection open
+2025-11-28 20:25:50,919 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:26:01,683 - INFO - connection open
+2025-11-28 20:26:01,686 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:30:37,892 - INFO - connection open
+2025-11-28 20:30:37,901 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:30:45,397 - INFO - connection open
+2025-11-28 20:30:45,402 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:30:51,876 - INFO - connection open
+2025-11-28 20:30:51,886 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:30:54,147 - INFO - connection open
+2025-11-28 20:30:54,151 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:30:56,794 - INFO - connection open
+2025-11-28 20:30:56,799 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:31:11,380 - INFO - connection open
+2025-11-28 20:31:11,383 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:31:12,815 - INFO - connection open
+2025-11-28 20:31:12,818 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:31:29,118 - INFO - connection open
+2025-11-28 20:31:29,126 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:31:41,009 - INFO - connection open
+2025-11-28 20:31:41,012 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-28 20:31:51,752 - INFO - connection open
+2025-11-28 20:31:51,761 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-28 20:31:53,321 - INFO - connection open
+2025-11-28 20:31:53,329 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:02:33,900 - INFO - connection open
+2025-11-29 09:02:34,375 - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jorge\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2025-11-29 09:02:34,912 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:03:31,537 - INFO - connection open
+2025-11-29 09:03:31,541 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:04:45,694 - INFO - connection open
+2025-11-29 09:04:45,703 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:04:54,116 - INFO - connection open
+2025-11-29 09:04:54,121 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:08:47,448 - INFO - connection open
+2025-11-29 09:08:47,451 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 09:08:56,103 - INFO - connection open
+2025-11-29 09:08:56,113 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 09:08:56,174 - INFO - connection open
+2025-11-29 09:08:56,183 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:09:39,566 - INFO - connection open
+2025-11-29 09:09:39,571 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 09:09:44,715 - INFO - connection open
+2025-11-29 09:09:44,721 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 09:10:15,467 - INFO - connection open
+2025-11-29 09:10:15,479 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:16:40,985 - INFO - connection open
+2025-11-29 09:16:41,027 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 09:17:16,750 - INFO - connection open
+2025-11-29 09:17:16,831 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:19:42,431 - INFO - connection open
+2025-11-29 09:19:42,651 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:23:20,716 - INFO - connection open
+2025-11-29 09:23:20,744 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:23:57,714 - INFO - connection open
+2025-11-29 09:23:57,731 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:24:39,580 - INFO - connection open
+2025-11-29 09:24:39,607 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:24:52,034 - INFO - connection open
+2025-11-29 09:24:52,046 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:26:42,936 - INFO - connection open
+2025-11-29 09:26:42,947 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:26:45,084 - INFO - connection open
+2025-11-29 09:26:45,177 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:30:45,240 - INFO - connection open
+2025-11-29 09:30:45,243 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:32:54,511 - INFO - connection open
+2025-11-29 09:32:54,536 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:38:29,819 - INFO - connection open
+2025-11-29 09:38:29,860 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:39:45,939 - INFO - connection open
+2025-11-29 09:39:45,976 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:39:51,642 - INFO - connection open
+2025-11-29 09:39:51,648 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:42:51,546 - INFO - connection open
+2025-11-29 09:42:51,551 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:43:11,382 - INFO - connection open
+2025-11-29 09:43:11,411 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:46:41,674 - INFO - connection open
+2025-11-29 09:46:41,705 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:47:13,566 - INFO - connection open
+2025-11-29 09:47:13,594 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:52:02,280 - INFO - connection open
+2025-11-29 09:52:02,327 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:52:09,115 - INFO - connection open
+2025-11-29 09:52:09,160 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 09:55:14,374 - INFO - connection open
+2025-11-29 09:55:14,419 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:02:18,777 - INFO - connection open
+2025-11-29 10:02:19,186 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:02:49,103 - INFO - connection open
+2025-11-29 10:02:49,116 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:02:53,794 - INFO - connection open
+2025-11-29 10:02:53,810 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:04:07,663 - INFO - connection open
+2025-11-29 10:04:07,675 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:04:43,525 - INFO - connection open
+2025-11-29 10:04:43,537 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:06:08,057 - INFO - connection open
+2025-11-29 10:06:08,116 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:06:28,703 - INFO - connection open
+2025-11-29 10:06:28,721 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:06:31,475 - INFO - connection open
+2025-11-29 10:06:31,487 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 10:39:37,950 - INFO - connection open
+2025-11-29 10:39:37,959 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:40:05,000 - INFO - connection open
+2025-11-29 10:40:05,004 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:40:10,085 - INFO - connection open
+2025-11-29 10:40:10,091 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:40:35,535 - INFO - connection open
+2025-11-29 10:40:35,543 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:40:39,683 - ERROR - Error procesando mensaje de chat: (1062, "Duplicate entry '' for key 'uuid'")
+2025-11-29 10:40:41,799 - ERROR - Error procesando mensaje de chat: (1062, "Duplicate entry '' for key 'uuid'")
+2025-11-29 10:49:26,418 - INFO - connection open
+2025-11-29 10:49:26,421 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:49:50,341 - INFO - connection open
+2025-11-29 10:49:50,344 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:52:28,678 - INFO - connection open
+2025-11-29 10:52:28,683 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:52:42,588 - INFO - connection open
+2025-11-29 10:52:42,600 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:52:45,720 - INFO - connection open
+2025-11-29 10:52:45,728 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:52:51,107 - INFO - connection open
+2025-11-29 10:52:51,113 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:52:58,812 - INFO - connection open
+2025-11-29 10:52:58,820 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:53:00,898 - INFO - connection open
+2025-11-29 10:53:00,901 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 10:53:03,644 - ERROR - Error en anti-spam check: (1054, "Unknown column 'chat_msg_limit' in 'field list'")
+2025-11-29 10:53:05,434 - INFO - connection open
+2025-11-29 10:53:05,455 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:19:25,889 - INFO - connection open
+2025-11-29 11:19:25,897 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:19:47,736 - INFO - connection open
+2025-11-29 11:19:47,740 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:19:54,796 - INFO - connection open
+2025-11-29 11:19:54,804 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:19:59,747 - INFO - connection open
+2025-11-29 11:19:59,753 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:21:55,439 - INFO - connection open
+2025-11-29 11:21:55,443 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:23:10,680 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 11:23:10,718 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 11:23:10,794 - INFO - === Servidor Aurora Iniciado (Redis Write-Behind Enabled) ===
+2025-11-29 11:23:11,286 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 11:23:14,943 - INFO - connection open
+2025-11-29 11:23:14,945 - INFO - connection open
+2025-11-29 11:23:14,949 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:23:28,949 - INFO - connection open
+2025-11-29 11:23:28,953 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:23:45,966 - INFO - connection open
+2025-11-29 11:23:45,990 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:24:29,413 - INFO - connection open
+2025-11-29 11:24:29,417 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:25:43,176 - INFO - connection open
+2025-11-29 11:25:43,218 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 11:25:51,830 - INFO - connection open
+2025-11-29 11:25:51,834 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 11:26:07,778 - INFO - connection open
+2025-11-29 11:26:07,784 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:26:08,532 - INFO - connection open
+2025-11-29 11:26:08,549 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 11:31:34,802 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 11:31:34,811 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 11:31:34,841 - INFO - === Servidor Aurora Iniciado (PYTHON FLUSH ENABLED) ===
+2025-11-29 11:31:34,890 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 11:31:35,937 - INFO - connection open
+2025-11-29 11:31:35,937 - INFO - connection open
+2025-11-29 11:31:42,297 - INFO - connection open
+2025-11-29 11:31:42,336 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:31:43,193 - INFO - connection open
+2025-11-29 11:31:43,200 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 11:31:49,705 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:31:49,787 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:32:02,647 - INFO - connection open
+2025-11-29 11:32:02,655 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 11:32:06,873 - INFO - connection open
+2025-11-29 11:32:06,877 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:32:09,626 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:32:09,679 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:33:47,561 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:33:47,701 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:33:47,857 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:33:47,908 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:33:48,689 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:33:48,850 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:33:49,161 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:33:49,192 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:34:09,176 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:34:09,298 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:35:15,609 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:35:15,697 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:38:14,642 - INFO - connection open
+2025-11-29 11:38:14,653 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:38:28,334 - INFO - connection open
+2025-11-29 11:38:28,340 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:38:43,591 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:38:43,790 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:39:17,302 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:6 a MySQL...
+2025-11-29 11:39:17,417 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:42:34,744 - INFO - connection open
+2025-11-29 11:42:34,755 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 11:42:46,884 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:9 a MySQL...
+2025-11-29 11:42:46,963 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:43:12,667 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:9 a MySQL...
+2025-11-29 11:43:12,782 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 11:44:40,395 - INFO - connection open
+2025-11-29 11:44:40,401 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 12:04:59,771 - INFO - connection open
+2025-11-29 12:04:59,784 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:09:50,863 - INFO - connection open
+2025-11-29 12:09:50,875 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:09:55,479 - INFO - connection open
+2025-11-29 12:09:55,486 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:12:12,169 - INFO - connection open
+2025-11-29 12:12:12,175 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:13:28,652 - INFO - connection open
+2025-11-29 12:13:28,670 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:13:53,953 - INFO - connection open
+2025-11-29 12:13:53,963 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:14:43,628 - INFO - connection open
+2025-11-29 12:14:43,633 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:22:27,648 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 12:22:27,685 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 12:22:27,754 - INFO - === Servidor Aurora Iniciado (PYTHON FLUSH ENABLED) ===
+2025-11-29 12:22:30,173 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 12:22:30,931 - INFO - connection open
+2025-11-29 12:22:45,320 - INFO - connection open
+2025-11-29 12:22:45,325 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:22:55,370 - INFO - connection open
+2025-11-29 12:22:55,381 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:22:56,393 - INFO - connection open
+2025-11-29 12:22:56,403 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:23:09,893 - INFO - connection open
+2025-11-29 12:23:09,902 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:23:17,868 - INFO - connection open
+2025-11-29 12:23:17,885 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:23:18,701 - INFO - connection open
+2025-11-29 12:23:18,707 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:23:32,959 - INFO - connection open
+2025-11-29 12:23:32,964 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 12:29:35,565 - INFO - connection open
+2025-11-29 12:29:35,600 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:29:42,516 - INFO - connection open
+2025-11-29 12:29:42,532 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 12:36:22,587 - INFO - connection open
+2025-11-29 12:36:22,599 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:36:25,756 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:9 a MySQL...
+2025-11-29 12:36:25,974 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 12:42:58,041 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 12:43:00,127 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 12:43:00,168 - INFO - === Servidor Aurora Iniciado (Worker Pattern Enabled) ===
+2025-11-29 12:43:00,270 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 12:43:00,460 - INFO - connection open
+2025-11-29 12:43:00,475 - INFO - connection open
+2025-11-29 12:43:12,148 - INFO - connection open
+2025-11-29 12:43:12,163 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:43:28,611 - INFO - connection open
+2025-11-29 12:43:28,622 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:45:05,611 - INFO - connection open
+2025-11-29 12:45:05,618 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 12:50:34,552 - INFO - connection open
+2025-11-29 12:50:34,557 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 12:50:36,618 - INFO - 💾 Flushing 10 mensajes de chat:buffer:community:9 a MySQL...
+2025-11-29 12:50:36,898 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 12:52:39,820 - INFO - connection open
+2025-11-29 12:52:39,830 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 18:41:41,935 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 18:41:43,798 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 18:41:43,829 - INFO - === Servidor Aurora Iniciado (Fixed Sender UUID + Redis Merge) ===
+2025-11-29 18:41:44,158 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 18:41:47,725 - INFO - connection open
+2025-11-29 18:41:47,727 - INFO - connection open
+2025-11-29 18:42:00,975 - INFO - connection open
+2025-11-29 18:42:00,983 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:42:03,975 - INFO - connection open
+2025-11-29 18:42:03,982 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 18:42:29,140 - INFO - connection open
+2025-11-29 18:42:29,149 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:42:34,603 - INFO - 💾 Flushing 10 mensajes de chat:buffer:private:1:2 a MySQL...
+2025-11-29 18:42:34,732 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 18:42:36,946 - INFO - connection open
+2025-11-29 18:42:36,950 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 18:42:53,205 - INFO - connection open
+2025-11-29 18:42:53,216 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:42:53,769 - INFO - connection open
+2025-11-29 18:42:53,778 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 18:52:02,169 - INFO - connection open
+2025-11-29 18:52:02,183 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 18:52:02,205 - INFO - connection open
+2025-11-29 18:52:02,242 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:52:16,951 - INFO - connection open
+2025-11-29 18:52:16,958 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:52:26,237 - INFO - 💾 Flushing 10 mensajes de chat:buffer:private:1:2 a MySQL...
+2025-11-29 18:52:26,429 - INFO - ✅ Flush exitoso: 10 mensajes guardados.
+2025-11-29 18:58:56,035 - INFO - connection open
+2025-11-29 18:58:56,058 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 18:58:56,323 - INFO - connection open
+2025-11-29 18:58:56,329 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 18:59:16,042 - INFO - connection open
+2025-11-29 18:59:16,051 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 19:17:28,277 - INFO - connection open
+2025-11-29 19:17:28,278 - INFO - connection open
+2025-11-29 21:16:57,031 - INFO - connection open
+2025-11-29 21:16:57,065 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:17:14,505 - INFO - connection open
+2025-11-29 21:17:14,518 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:17:36,762 - INFO - connection open
+2025-11-29 21:17:36,765 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:19:29,841 - INFO - connection open
+2025-11-29 21:19:29,853 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:19:37,333 - INFO - connection open
+2025-11-29 21:19:37,338 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:23:32,725 - INFO - connection open
+2025-11-29 21:23:32,732 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:25:38,434 - INFO - connection open
+2025-11-29 21:25:38,441 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:31:12,725 - INFO - connection open
+2025-11-29 21:31:12,729 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 21:36:33,112 - INFO - connection open
+2025-11-29 21:36:33,118 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:08:01,790 - INFO - ✅ Pool de conexiones a base de datos inicializado (Max 20).
+2025-11-29 22:08:01,819 - INFO - ✅ Conexión a Redis inicializada.
+2025-11-29 22:08:01,820 - INFO - === Servidor Aurora Iniciado (Multi-Channel Support) ===
+2025-11-29 22:08:02,128 - INFO - server listening on 0.0.0.0:8080
+2025-11-29 22:08:07,430 - INFO - connection open
+2025-11-29 22:08:55,265 - INFO - connection open
+2025-11-29 22:08:55,280 - INFO - Usuario conectado: ID 1 | Rol: user
+2025-11-29 22:09:09,965 - INFO - connection open
+2025-11-29 22:09:10,007 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:09:20,093 - INFO - connection open
+2025-11-29 22:09:20,097 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:10:04,838 - INFO - connection open
+2025-11-29 22:10:04,846 - INFO - Usuario conectado: ID 1 | Rol: founder
