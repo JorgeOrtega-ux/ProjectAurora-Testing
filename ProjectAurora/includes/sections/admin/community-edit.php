@@ -227,6 +227,60 @@ $pageDesc = $targetId ? 'Modifica los detalles y la apariencia de esta comunidad
                     </div>
                 </div>
             </div>
+            
+            <hr class="component-divider">
+            <div class="component-group-item component-group-item--stacked">
+                <div class="component-card__content">
+                    <div class="component-icon-container" style="background-color: #fff8e1; border-color: #ffecb3;">
+                        <span class="material-symbols-rounded" style="color: #f57f17;">tag</span>
+                    </div>
+                    <div class="component-card__text">
+                        <h2 class="component-card__title">Gestión de Canales</h2>
+                        <p class="component-card__description">Crea canales de texto o anuncios. Arrastra para reordenar (Próximamente).</p>
+                    </div>
+                </div>
+
+                <div id="channels-list-container" class="w-100" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;">
+                    </div>
+
+                <div class="component-card__actions w-100" style="background: #f9f9f9; padding: 12px; border-radius: 8px; border: 1px dashed #ccc; margin-top: 8px;">
+                    <div style="display: flex; gap: 8px; width: 100%; align-items: center;">
+                        <div style="flex: 1;">
+                            <input type="text" id="new-channel-name" class="component-text-input" placeholder="Nombre del canal (ej: general)" style="background: #fff;">
+                        </div>
+                        <div style="width: 140px;">
+                            <div class="trigger-select-wrapper" style="width: 100%;">
+                                <div class="trigger-selector" data-action="toggle-dropdown" data-target="dropdown-channel-type">
+                                    <div class="trigger-select-text">
+                                        <span id="new-channel-type-text">Texto</span>
+                                    </div>
+                                    <div class="trigger-select-arrow">
+                                        <span class="material-symbols-rounded">arrow_drop_down</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="new-channel-type" value="text">
+                                <div class="popover-module popover-module--anchor-right body-title disabled" id="dropdown-channel-type" style="width: 160px;">
+                                    <div class="menu-content">
+                                        <div class="menu-list">
+                                            <div class="menu-link active" data-action="select-channel-type" data-value="text" data-label="Texto">
+                                                <div class="menu-link-icon"><span class="material-symbols-rounded">tag</span></div>
+                                                <div class="menu-link-text">Texto</div>
+                                            </div>
+                                            <div class="menu-link" data-action="select-channel-type" data-value="announcement" data-label="Anuncios">
+                                                <div class="menu-link-icon"><span class="material-symbols-rounded">campaign</span></div>
+                                                <div class="menu-link-text">Anuncios</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="component-button primary" id="btn-add-channel" style="width: 40px; padding: 0;">
+                            <span class="material-symbols-rounded">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
         </div>
         </div>

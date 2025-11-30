@@ -2113,3 +2113,31 @@ ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una con
 2025-11-29 22:09:20,097 - INFO - Usuario conectado: ID 1 | Rol: founder
 2025-11-29 22:10:04,838 - INFO - connection open
 2025-11-29 22:10:04,846 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:18:28,248 - INFO - connection open
+2025-11-29 22:18:28,288 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:18:51,025 - INFO - connection open
+2025-11-29 22:18:51,041 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:19:06,155 - INFO - connection open
+2025-11-29 22:19:06,158 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:19:36,299 - INFO - connection open
+2025-11-29 22:19:36,304 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:19:40,291 - INFO - connection open
+2025-11-29 22:19:40,295 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:20:02,117 - INFO - connection open
+2025-11-29 22:20:02,125 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:20:32,333 - INFO - connection open
+2025-11-29 22:20:32,338 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:21:20,702 - INFO - connection open
+2025-11-29 22:21:20,747 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 22:21:31,866 - INFO - connection open
+2025-11-29 22:21:31,873 - INFO - Usuario conectado: ID 2 | Rol: user
+2025-11-29 22:23:44,712 - INFO - connection open
+2025-11-29 22:23:44,718 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:24:48,401 - INFO - connection open
+2025-11-29 22:24:48,404 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:25:20,834 - INFO - connection open
+2025-11-29 22:25:20,837 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:25:41,463 - INFO - connection open
+2025-11-29 22:25:41,472 - INFO - Usuario conectado: ID 1 | Rol: founder
+2025-11-29 22:25:51,081 - INFO - connection open
+2025-11-29 22:25:51,087 - INFO - Usuario conectado: ID 1 | Rol: founder

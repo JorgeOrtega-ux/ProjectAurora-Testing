@@ -414,13 +414,20 @@ try {
         $stmt->execute([$id]);
         $community = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        if ($community) echo json_encode(['success' => true, 'community' => $community]);
-        else throw new Exception("Comunidad no encontrada");
+        if ($community) {
+            // [MODIFICADO] Obtener canales
+            $stmtCh = $pdo->prepare("SELECT * FROM community_channels WHERE community_id = ? ORDER BY created_at ASC");
+            $stmtCh->execute([$id]);
+            $community['channels'] = $stmtCh->fetchAll(PDO::FETCH_ASSOC);
+
+            echo json_encode(['success' => true, 'community' => $community]);
+        } else {
+            throw new Exception("Comunidad no encontrada");
+        }
 
     } elseif ($action === 'save_community') {
         $id = (int)($data['id'] ?? 0);
         $name = trim($data['name'] ?? '');
-        // [MODIFICADO] Leer tipo en vez de descripción
         $type = $data['community_type'] ?? 'other';
         $allowedTypes = ['municipality', 'university', 'other'];
         if (!in_array($type, $allowedTypes)) $type = 'other';
@@ -429,6 +436,9 @@ try {
         $code = trim($data['access_code'] ?? '');
         $pfp = trim($data['profile_picture'] ?? '');
         $banner = trim($data['banner_picture'] ?? '');
+        
+        // [NUEVO] Canales
+        $channelsRaw = $data['channels'] ?? []; 
 
         if (empty($name) || empty($code)) throw new Exception("Nombre y Código de acceso son obligatorios.");
         if (!in_array($privacy, ['public', 'private'])) throw new Exception("Privacidad inválida.");
@@ -438,19 +448,72 @@ try {
         $stmtCheck->execute([$code, $id]);
         if ($stmtCheck->rowCount() > 0) throw new Exception("El código de acceso ya está en uso.");
 
-        if ($id === 0) {
-            // CREAR
-            $uuid = generate_uuid();
-            $sql = "INSERT INTO communities (uuid, community_name, community_type, access_code, privacy, profile_picture, banner_picture, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
-            $pdo->prepare($sql)->execute([$uuid, $name, $type, $code, $privacy, $pfp, $banner]);
-            $msg = "Comunidad creada correctamente.";
-        } else {
-            // EDITAR
-            $sql = "UPDATE communities SET community_name=?, community_type=?, access_code=?, privacy=?, profile_picture=?, banner_picture=? WHERE id=?";
-            $pdo->prepare($sql)->execute([$name, $type, $code, $privacy, $pfp, $banner, $id]);
-            $msg = "Comunidad actualizada correctamente.";
+        $pdo->beginTransaction(); 
+
+        try {
+            if ($id === 0) {
+                // CREAR
+                $uuid = generate_uuid();
+                $sql = "INSERT INTO communities (uuid, community_name, community_type, access_code, privacy, profile_picture, banner_picture, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
+                $pdo->prepare($sql)->execute([$uuid, $name, $type, $code, $privacy, $pfp, $banner]);
+                $id = $pdo->lastInsertId(); 
+                $msg = "Comunidad creada correctamente.";
+                
+                // Crear canal por defecto si no viene ninguno
+                if (empty($channelsRaw)) {
+                    $channelsRaw[] = ['id' => 0, 'name' => 'General', 'type' => 'text'];
+                }
+            } else {
+                // EDITAR
+                $sql = "UPDATE communities SET community_name=?, community_type=?, access_code=?, privacy=?, profile_picture=?, banner_picture=? WHERE id=?";
+                $pdo->prepare($sql)->execute([$name, $type, $code, $privacy, $pfp, $banner, $id]);
+                $msg = "Comunidad actualizada correctamente.";
+            }
+
+            // --- PROCESAR CANALES ---
+            // 1. Obtener IDs existentes
+            $stmtCurrentIds = $pdo->prepare("SELECT id FROM community_channels WHERE community_id = ?");
+            $stmtCurrentIds->execute([$id]);
+            $existingIds = $stmtCurrentIds->fetchAll(PDO::FETCH_COLUMN);
+
+            $submittedIds = [];
+
+            foreach ($channelsRaw as $ch) {
+                $chId = (int)($ch['id'] ?? 0);
+                $chName = trim($ch['name'] ?? 'Canal');
+                $chType = $ch['type'] ?? 'text';
+                
+                if (empty($chName)) continue;
+
+                if ($chId > 0 && in_array($chId, $existingIds)) {
+                    // UPDATE
+                    $stmtUpdCh = $pdo->prepare("UPDATE community_channels SET name = ?, type = ? WHERE id = ? AND community_id = ?");
+                    $stmtUpdCh->execute([$chName, $chType, $chId, $id]);
+                    $submittedIds[] = $chId;
+                } else {
+                    // INSERT
+                    $chUuid = generate_uuid();
+                    $stmtInsCh = $pdo->prepare("INSERT INTO community_channels (uuid, community_id, name, type, created_at) VALUES (?, ?, ?, ?, NOW())");
+                    $stmtInsCh->execute([$chUuid, $id, $chName, $chType]);
+                }
+            }
+
+            // 2. Eliminar canales removidos
+            $toDelete = array_diff($existingIds, $submittedIds);
+            if (!empty($toDelete)) {
+                $placeholders = implode(',', array_fill(0, count($toDelete), '?'));
+                $stmtDelCh = $pdo->prepare("DELETE FROM community_channels WHERE id IN ($placeholders) AND community_id = ?");
+                $params = array_merge($toDelete, [$id]);
+                $stmtDelCh->execute($params);
+            }
+
+            $pdo->commit();
+            echo json_encode(['success' => true, 'message' => $msg]);
+
+        } catch (Exception $e) {
+            $pdo->rollBack();
+            throw $e;
         }
-        echo json_encode(['success' => true, 'message' => $msg]);
 
     } elseif ($action === 'delete_community') {
         $id = (int)($data['id'] ?? 0);

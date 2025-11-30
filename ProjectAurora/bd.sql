@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS system_alerts_history (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ==========================================
--- 4. COMUNIDADES (MODIFICADO: Sin creator_id, con community_type)
+-- 4. COMUNIDADES
 -- ==========================================
 
 CREATE TABLE IF NOT EXISTS communities (
@@ -215,6 +215,17 @@ CREATE TABLE IF NOT EXISTS communities (
     INDEX (access_code)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- [NUEVO] TABLA DE CANALES
+CREATE TABLE IF NOT EXISTS community_channels (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    uuid CHAR(36) NOT NULL UNIQUE,
+    community_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    type ENUM('text', 'announcement') DEFAULT 'text',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (community_id) REFERENCES communities(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 CREATE TABLE IF NOT EXISTS community_members (
     id INT AUTO_INCREMENT PRIMARY KEY,
     community_id INT NOT NULL,
@@ -229,10 +240,12 @@ CREATE TABLE IF NOT EXISTS community_members (
     UNIQUE KEY unique_membership (community_id, user_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- [MODIFICADO] SE AGREGA CHANNEL_ID
 CREATE TABLE IF NOT EXISTS community_messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     uuid CHAR(36) NOT NULL,
     community_id INT NOT NULL,
+    channel_id INT DEFAULT NULL, -- Nuevo campo para soportar canales
     user_id INT NOT NULL,
     reply_to_id INT NULL,
     reply_to_uuid CHAR(36) NULL,
@@ -241,10 +254,11 @@ CREATE TABLE IF NOT EXISTS community_messages (
     status ENUM('active', 'deleted') DEFAULT 'active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (community_id) REFERENCES communities(id) ON DELETE CASCADE,
+    FOREIGN KEY (channel_id) REFERENCES community_channels(id) ON DELETE CASCADE, -- Relación con canales
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (reply_to_id) REFERENCES community_messages(id) ON DELETE SET NULL,
     UNIQUE KEY (uuid),
-    INDEX (community_id, created_at)
+    INDEX (community_id, channel_id, created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS community_message_reports (
@@ -345,7 +359,7 @@ CREATE TABLE IF NOT EXISTS user_blocks (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ==========================================
--- 7. DATOS DE PRUEBA (Actualizados con Tipos Reales)
+-- 7. DATOS DE PRUEBA
 -- ==========================================
 
 INSERT IGNORE INTO communities (uuid, community_name, community_type, access_code, privacy, member_count, profile_picture, banner_picture) VALUES
