@@ -31,8 +31,8 @@ export function initAdminCommunityEdit() {
         generateCode();
         // Ocultar al inicio si es nueva y por defecto es pública
         toggleAccessCodeVisibility('public');
-        // Canal por defecto para nuevas comunidades
-        currentChannels.push({ id: 0, name: 'General', type: 'text' });
+        // Canal por defecto para nuevas comunidades (marcado como default)
+        currentChannels.push({ id: 0, name: 'General', type: 'text', is_default: true });
         renderChannels();
     }
 
@@ -95,7 +95,7 @@ function initListeners() {
             if (!name) return alert("El nombre del canal es obligatorio.");
             
             // Agregar al array local (id 0 indica nuevo)
-            currentChannels.push({ id: 0, name: name, type: type });
+            currentChannels.push({ id: 0, name: name, type: type, is_default: false });
             
             // Limpiar input y renderizar
             nameInput.value = '';
@@ -103,17 +103,39 @@ function initListeners() {
         };
     }
 
-    // Eliminar Canal (Delegado)
+    // [NUEVO] Seleccionar Canal Predeterminado
     document.getElementById('channels-list-container')?.addEventListener('click', (e) => {
+        const defaultBtn = e.target.closest('[data-action="set-default-channel"]');
+        if (defaultBtn) {
+            const index = parseInt(defaultBtn.dataset.index);
+            // Marcar todos como false
+            currentChannels.forEach(ch => ch.is_default = false);
+            // Marcar el seleccionado
+            if (currentChannels[index]) {
+                currentChannels[index].is_default = true;
+            }
+            renderChannels();
+            return;
+        }
+
+        // Eliminar Canal
         const delBtn = e.target.closest('[data-action="remove-channel"]');
         if (delBtn) {
             const index = parseInt(delBtn.dataset.index);
             if (currentChannels[index]) {
-                // Si es el último canal, advertir (opcional)
                 if (currentChannels.length <= 1) {
                     return alert("La comunidad debe tener al menos un canal.");
                 }
+                
+                // Si eliminamos el default, asignar al primero disponible
+                const wasDefault = currentChannels[index].is_default;
+                
                 currentChannels.splice(index, 1);
+                
+                if (wasDefault && currentChannels.length > 0) {
+                    currentChannels[0].is_default = true;
+                }
+                
                 renderChannels();
             }
         }
@@ -162,14 +184,19 @@ async function loadData() {
             currentChannels = c.channels.map(ch => ({
                 id: ch.id,
                 name: ch.name,
-                type: ch.type
+                type: ch.type,
+                is_default: (parseInt(ch.id) === parseInt(c.default_channel_id))
             }));
         }
+        
+        // Asegurar que al menos uno sea default
+        if (currentChannels.length > 0 && !currentChannels.some(ch => ch.is_default)) {
+            currentChannels[0].is_default = true;
+        }
+
         renderChannels();
         
-        // [MODIFICADO] Asegurar la visibilidad inicial al cargar datos
         toggleAccessCodeVisibility(c.privacy);
-
         updatePreviews();
     }
 }
@@ -182,17 +209,30 @@ function renderChannels() {
 
     currentChannels.forEach((ch, index) => {
         const icon = (ch.type === 'announcement') ? 'campaign' : 'tag';
+        const isDefault = ch.is_default === true;
         
+        // Estilos para el indicador de default
+        const defaultIcon = isDefault ? 'radio_button_checked' : 'radio_button_unchecked';
+        const defaultColor = isDefault ? '#1976d2' : '#999';
+        const activeClass = isDefault ? 'active-default-channel' : '';
+        const titleDefault = isDefault ? 'Canal Principal' : 'Marcar como principal';
+
         const row = document.createElement('div');
-        row.className = 'channel-edit-row';
-        row.style.cssText = 'display: flex; align-items: center; padding: 8px 12px; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; gap: 10px;';
+        row.className = `channel-edit-row ${activeClass}`;
+        row.style.cssText = `display: flex; align-items: center; padding: 8px 12px; background: ${isDefault ? '#e3f2fd' : '#fff'}; border: 1px solid ${isDefault ? '#90caf9' : '#e0e0e0'}; border-radius: 8px; gap: 10px; transition: all 0.2s;`;
         
         row.innerHTML = `
-            <span class="material-symbols-rounded" style="color: #999; font-size: 20px;">${icon}</span>
+            <div class="component-icon-button small" data-action="set-default-channel" data-index="${index}" title="${titleDefault}" style="width: 24px; height: 24px; border:none; cursor:pointer;">
+                <span class="material-symbols-rounded" style="color: ${defaultColor}; font-size: 20px;">${defaultIcon}</span>
+            </div>
+            
+            <span class="material-symbols-rounded" style="color: #666; font-size: 20px;">${icon}</span>
+            
             <div style="flex: 1; display: flex; flex-direction: column;">
                 <span style="font-size: 14px; font-weight: 600; color: #333;">${ch.name}</span>
                 <span style="font-size: 11px; color: #888; text-transform: capitalize;">${ch.type === 'text' ? 'Texto' : 'Anuncios'}</span>
             </div>
+            
             <button class="component-icon-button small" data-action="remove-channel" data-index="${index}" style="width: 32px; height: 32px; border-color: transparent; color: #d32f2f;">
                 <span class="material-symbols-rounded" style="font-size: 18px;">delete</span>
             </button>
@@ -244,9 +284,12 @@ async function saveCommunity() {
     if (!name) return alert("El nombre es obligatorio.");
     if (!code) return alert("El código de acceso es obligatorio.");
     if (currentChannels.length === 0) return alert("Debes agregar al menos un canal.");
+    
+    // Asegurar que haya un default seleccionado
+    if (!currentChannels.some(ch => ch.is_default)) {
+        currentChannels[0].is_default = true;
+    }
 
-    // [FIX] Asegurarse de enviar el estado del botón a loading
-    // Usamos una función propia setButtonLoading si está disponible o lo hacemos manual
     if (window.setButtonLoading) {
         window.setButtonLoading(btn, true);
     } else {
@@ -263,7 +306,7 @@ async function saveCommunity() {
         access_code: code,
         profile_picture: document.getElementById('input-comm-pfp').value,
         banner_picture: document.getElementById('input-comm-banner').value,
-        channels: currentChannels // Enviamos el array completo
+        channels: currentChannels // Enviamos el array completo con el flag is_default
     };
 
     const res = await postJson('api/admin_handler.php', payload);

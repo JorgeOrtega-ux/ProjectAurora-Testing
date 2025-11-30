@@ -78,7 +78,7 @@ try {
     // --- OBTENER SIDEBAR LIST (FUSIÓN SQL + REDIS) ---
     } elseif ($action === 'get_sidebar_list') {
         
-        // 1. Obtener Comunidades desde SQL
+        // 1. Obtener Comunidades desde SQL (Añadido: default_channel_uuid)
         $sqlCommunities = "SELECT 
                     'community' as type,
                     c.id, c.uuid, c.community_name as name, 
@@ -87,7 +87,8 @@ try {
                     (SELECT created_at FROM community_messages WHERE community_id = c.id ORDER BY created_at DESC LIMIT 1) as last_message_at,
                     (SELECT COUNT(*) FROM community_messages WHERE community_id = c.id AND created_at > cm.last_read_at AND user_id != cm.user_id) as unread_count,
                     0 as is_blocked_by_me,
-                    'member' as role 
+                    'member' as role,
+                    (SELECT uuid FROM community_channels WHERE id = c.default_channel_id) as default_channel_uuid
                 FROM communities c
                 JOIN community_members cm ON c.id = cm.community_id
                 WHERE cm.user_id = ?";
@@ -96,7 +97,7 @@ try {
         $stmtComm->execute([$userId]);
         $communities = $stmtComm->fetchAll(PDO::FETCH_ASSOC);
 
-        // 2. Obtener Chats Privados Activos desde SQL
+        // ... (El resto del código de DMs y Redis se mantiene igual)
         $sqlDMs = "SELECT 
                     'private' as type,
                     u.id, u.uuid, u.username as name, 
@@ -132,7 +133,6 @@ try {
         $stmtDMs->execute($params);
         $dms = $stmtDMs->fetchAll(PDO::FETCH_ASSOC);
 
-        // Procesar privacidad en DMs
         foreach ($dms as &$dm) {
             $privacy = $dm['message_privacy'];
             $status = $dm['friend_status'];
@@ -143,10 +143,8 @@ try {
             unset($dm['friend_status']);
         }
 
-        // Combinar listas iniciales
         $fullList = array_merge($communities, $dms);
         
-        // --- 3. FUSIÓN CON REDIS ---
         if (isset($redis) && $redis) {
             try {
                 $existingMap = [];
@@ -229,9 +227,7 @@ try {
         usort($fullList, function($a, $b) {
             $pinA = (int)($a['is_pinned'] ?? 0);
             $pinB = (int)($b['is_pinned'] ?? 0);
-            
             if ($pinA !== $pinB) return $pinB - $pinA; 
-
             $t1 = $a['last_message_at'] ? strtotime($a['last_message_at']) : 0;
             $t2 = $b['last_message_at'] ? strtotime($b['last_message_at']) : 0;
             return $t2 - $t1;
@@ -239,7 +235,8 @@ try {
 
         echo json_encode(['success' => true, 'list' => $fullList]);
 
-    // --- TOGGLE PIN CHAT ---
+    // ... (toggle_pin, toggle_favorite, get_public_communities, join_public, leave_community, get_community_by_uuid, get_user_chat_by_uuid se mantienen igual) ...
+    // --- (toggle_pin, etc.) omitidos por brevedad, no cambian ---
     } elseif ($action === 'toggle_pin') {
         $uuid = $data['uuid'] ?? '';
         $type = $data['type'] ?? ''; 
@@ -290,7 +287,6 @@ try {
 
         echo json_encode(['success' => true, 'is_pinned' => $newState, 'message' => $newState ? 'Chat fijado' : 'Chat desfijado']);
 
-    // --- TOGGLE FAVORITE CHAT ---
     } elseif ($action === 'toggle_favorite') {
         $uuid = $data['uuid'] ?? '';
         $type = $data['type'] ?? ''; 
@@ -328,7 +324,6 @@ try {
 
         echo json_encode(['success' => true, 'is_favorite' => $newState, 'message' => $newState ? 'Marcado como favorito' : 'Quitado de favoritos']);
 
-    // --- OBTENER COMUNIDADES PÚBLICAS ---
     } elseif ($action === 'get_public_communities') {
         $sql = "SELECT c.id, c.uuid, c.community_name, c.community_type, c.member_count, c.profile_picture, c.banner_picture
                 FROM communities c
@@ -340,25 +335,22 @@ try {
         $communities = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(['success' => true, 'communities' => $communities]);
 
-    // --- UNIRSE A PÚBLICA ---
     } elseif ($action === 'join_public') {
         $communityId = (int)($data['community_id'] ?? 0);
         $stmtCheck = $pdo->prepare("SELECT id FROM community_members WHERE community_id = ? AND user_id = ?");
         $stmtCheck->execute([$communityId, $userId]);
         if ($stmtCheck->rowCount() > 0) throw new Exception("Ya eres miembro.");
         
-        // Obtener el ID del canal general por defecto
-        $stmtChannel = $pdo->prepare("SELECT id FROM community_channels WHERE community_id = ? AND name = 'General' LIMIT 1");
+        // Obtener canal default para validación (aunque no se usa directo aquí, es buena práctica)
+        $stmtChannel = $pdo->prepare("SELECT id FROM community_channels WHERE community_id = ? ORDER BY created_at ASC LIMIT 1");
         $stmtChannel->execute([$communityId]);
-        $channelId = $stmtChannel->fetchColumn();
-
+        
         $pdo->beginTransaction();
         $pdo->prepare("INSERT INTO community_members (community_id, user_id) VALUES (?, ?)")->execute([$communityId, $userId]);
         $pdo->prepare("UPDATE communities SET member_count = member_count + 1 WHERE id = ?")->execute([$communityId]);
         $pdo->commit();
         echo json_encode(['success' => true, 'message' => 'Te has unido al grupo.']);
 
-    // --- ABANDONAR ---
     } elseif ($action === 'leave_community') {
         $uuid = $data['uuid'] ?? '';
         $communityId = (int)($data['community_id'] ?? 0);
@@ -384,15 +376,22 @@ try {
             throw new Exception("No eres miembro de este grupo.");
         }
 
-    // --- OBTENER DETALLES COMUNIDAD POR UUID ---
     } elseif ($action === 'get_community_by_uuid') {
         $uuid = trim($data['uuid'] ?? '');
-        $sql = "SELECT c.id, c.uuid, c.community_name, c.community_type, c.profile_picture, c.banner_picture, cm.role FROM communities c JOIN community_members cm ON c.id = cm.community_id WHERE c.uuid = ? AND cm.user_id = ?";
-        $stmt = $pdo->prepare($sql); $stmt->execute([$uuid, $userId]); $comm = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($comm) { $comm['type'] = 'community'; echo json_encode(['success' => true, 'data' => $comm]); } 
+        $sql = "SELECT c.id, c.uuid, c.community_name, c.community_type, c.profile_picture, c.banner_picture, cm.role,
+                       (SELECT uuid FROM community_channels WHERE id = c.default_channel_id) as default_channel_uuid 
+                FROM communities c 
+                JOIN community_members cm ON c.id = cm.community_id 
+                WHERE c.uuid = ? AND cm.user_id = ?";
+        $stmt = $pdo->prepare($sql); 
+        $stmt->execute([$uuid, $userId]); 
+        $comm = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($comm) { 
+            $comm['type'] = 'community'; 
+            echo json_encode(['success' => true, 'data' => $comm]); 
+        } 
         else echo json_encode(['success' => false, 'message' => 'Error']);
 
-    // --- OBTENER DETALLES USUARIO (DM) POR UUID ---
     } elseif ($action === 'get_user_chat_by_uuid') {
         $uuid = trim($data['uuid'] ?? '');
         
@@ -433,8 +432,9 @@ try {
     } elseif ($action === 'get_community_details') {
         $uuid = trim($data['uuid'] ?? '');
         
-        // Info Básica y Rol
-        $stmtC = $pdo->prepare("SELECT c.id, c.community_name, c.community_type, c.profile_picture, c.access_code, c.member_count, cm.role 
+        // Info Básica, Rol y [NUEVO] Default Channel UUID
+        $stmtC = $pdo->prepare("SELECT c.id, c.community_name, c.community_type, c.profile_picture, c.access_code, c.member_count, cm.role,
+                                (SELECT uuid FROM community_channels WHERE id = c.default_channel_id) as default_channel_uuid
                                 FROM communities c 
                                 JOIN community_members cm ON c.id = cm.community_id 
                                 WHERE c.uuid = ? AND cm.user_id = ?");
@@ -465,15 +465,14 @@ try {
         $stmtF->execute([$info['id']]); 
         $files = $stmtF->fetchAll(PDO::FETCH_ASSOC);
 
-        // [NUEVO] Obtener Canales
+        // Obtener Canales
         $sqlChannels = "SELECT id, uuid, name, type FROM community_channels WHERE community_id = ? ORDER BY created_at ASC";
         $stmtChannels = $pdo->prepare($sqlChannels);
         $stmtChannels->execute([$info['id']]);
         $channels = $stmtChannels->fetchAll(PDO::FETCH_ASSOC);
         
-        // Si no hay canales (legacy support), creamos "General" on the fly o lo simulamos
+        // Fallback General
         if (empty($channels)) {
-            // Crear canal general por defecto si no existe
             $newUuid = generate_uuid();
             $pdo->prepare("INSERT INTO community_channels (uuid, community_id, name, type) VALUES (?, ?, 'General', 'text')")
                 ->execute([$newUuid, $info['id']]);
@@ -522,10 +521,10 @@ try {
             ], 
             'members' => [], 
             'files' => $files,
-            'channels' => [] // Privado no tiene canales
+            'channels' => [] 
         ]);
 
-    // --- [NUEVO] CREAR CANAL ---
+    // --- CREAR CANAL ---
     } elseif ($action === 'create_channel') {
         $communityUuid = $data['community_uuid'] ?? '';
         $name = trim($data['name'] ?? '');
@@ -533,7 +532,6 @@ try {
 
         if (empty($communityUuid) || empty($name)) throw new Exception("Faltan datos.");
 
-        // Obtener ID de comunidad y verificar rol
         $stmt = $pdo->prepare("SELECT c.id, cm.role FROM communities c JOIN community_members cm ON c.id = cm.community_id WHERE c.uuid = ? AND cm.user_id = ?");
         $stmt->execute([$communityUuid, $userId]);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -550,12 +548,11 @@ try {
             throw new Exception("Error al crear el canal.");
         }
 
-    // --- [NUEVO] ELIMINAR CANAL ---
+    // --- ELIMINAR CANAL ---
     } elseif ($action === 'delete_channel') {
         $channelUuid = $data['channel_uuid'] ?? '';
         if (empty($channelUuid)) throw new Exception("UUID requerido.");
 
-        // Verificar permisos y obtener community_id
         $stmt = $pdo->prepare("
             SELECT cc.id, cc.community_id, cm.role 
             FROM community_channels cc 
@@ -568,7 +565,6 @@ try {
         if (!$row) throw new Exception("Canal no encontrado o sin permisos.");
         if (!in_array($row['role'], ['admin', 'moderator'])) throw new Exception("No tienes permisos.");
 
-        // Verificar que no sea el último canal (opcional, pero recomendable)
         $stmtCount = $pdo->prepare("SELECT COUNT(*) FROM community_channels WHERE community_id = ?");
         $stmtCount->execute([$row['community_id']]);
         if ($stmtCount->fetchColumn() <= 1) {

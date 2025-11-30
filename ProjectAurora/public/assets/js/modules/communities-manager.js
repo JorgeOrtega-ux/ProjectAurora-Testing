@@ -66,7 +66,6 @@ function renderChatListItem(item) {
     const favAttr = isFavorite ? 'true' : 'false';
     const blockedAttr = isBlocked ? 'true' : 'false';
 
-    // [MODIFICADO] Eliminado el contenedor de canales (acordeón)
     const actionType = isPrivate ? 'select-chat' : 'enter-community';
 
     return `
@@ -188,7 +187,7 @@ async function renderCommunityView(uuid) {
     currentCommunityUuid = uuid;
 
     const item = sidebarItems.find(i => i.uuid === uuid);
-    if (!item) return; // Si no existe en la lista (raro), no hacemos nada
+    if (!item) return; 
 
     setupCommunityHeader(item);
 
@@ -429,10 +428,6 @@ async function handleSidebarUpdate(payload) {
     if (currentSidebarView === 'main') {
         // Si estamos en la lista principal, re-renderizamos para actualizar orden y badges
         renderSidebarList();
-    } else if (currentSidebarView === 'community') {
-        // Si estamos dentro de una comunidad, NO re-renderizamos la lista principal.
-        // Pero si el mensaje es de ESTA comunidad, tal vez necesitemos actualizar badges de canales (si tuviéramos badges por canal en la API).
-        // Por ahora, si llega un DM mientras estamos en comunidad, solo se actualiza el dato en memoria.
     }
 }
 
@@ -481,7 +476,6 @@ async function loadSidebarList(shouldOpenActive = false) {
         if (itemData) {
             // Si es comunidad, entrar directamente a la vista de comunidad
             if (itemData.type === 'community') {
-                 // [FIX] Cargar canales primero para determinar default
                  if (!channelsCache[window.ACTIVE_CHAT_UUID]) {
                      await loadChannels(window.ACTIVE_CHAT_UUID);
                  }
@@ -491,6 +485,11 @@ async function loadSidebarList(shouldOpenActive = false) {
                  if (window.ACTIVE_CHANNEL_UUID) {
                      targetCh = channels.find(c => c.uuid === window.ACTIVE_CHANNEL_UUID);
                  }
+                 // [MODIFICADO] Usar default_channel_uuid si existe
+                 if (!targetCh && itemData.default_channel_uuid) {
+                     targetCh = channels.find(c => c.uuid === itemData.default_channel_uuid);
+                 }
+                 // Fallback
                  if (!targetCh && channels.length > 0) {
                      targetCh = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
                  }
@@ -501,15 +500,18 @@ async function loadSidebarList(shouldOpenActive = false) {
                      window.ACTIVE_CHANNEL_UUID = targetCh.uuid;
                  }
 
-                 // Renderizar la vista de comunidad
-                 renderCommunityView(window.ACTIVE_CHAT_UUID);
+                 // [IMPORTANTE] Obligar a renderizar la vista de comunidad antes de abrir
+                 await renderCommunityView(window.ACTIVE_CHAT_UUID);
                  
-                 // Abrir chat
                  if (shouldOpenActive) {
                      openChat(window.ACTIVE_CHAT_UUID, itemData);
+                     // Marcar activo
+                     setTimeout(() => {
+                         const chEl = document.querySelector(`.channel-item[data-uuid="${targetCh.uuid}"]`);
+                         if(chEl) chEl.classList.add('active');
+                     }, 50);
                  }
             } else {
-                // Si es privado, renderizar lista principal
                 renderSidebarList();
                 if (shouldOpenActive) {
                     openChat(window.ACTIVE_CHAT_UUID, itemData);
@@ -636,7 +638,6 @@ async function leaveCommunity(uuid) {
     const res = await postJson('api/communities_handler.php', { action: 'leave_community', uuid: uuid });
     if (res.success) {
         if(window.alertManager) window.alertManager.showAlert(res.message, 'success');
-        // Si estamos en el grupo, volver al inicio
         if (window.ACTIVE_CHAT_UUID === uuid) {
              window.ACTIVE_CHAT_UUID = null;
              if(window.navigateTo) window.navigateTo('main'); else window.location.href = window.BASE_PATH + 'main';
@@ -741,7 +742,6 @@ function initListListeners() {
     // Main List Click
     document.getElementById('my-communities-list')?.addEventListener('click', async (e) => {
         
-        // Menú Contextual
         const chatMenuBtn = e.target.closest('[data-action="open-chat-menu"]');
         if (chatMenuBtn) {
             e.preventDefault(); e.stopPropagation(); 
@@ -752,17 +752,14 @@ function initListListeners() {
             return;
         }
 
-        // Clic en Canal Específico
         const channelItem = e.target.closest('[data-action="select-channel"]');
         if (channelItem && !e.target.closest('.channel-action-btn')) {
             const uuid = channelItem.dataset.uuid;
             const commUuid = channelItem.dataset.community;
             
             const commItem = sidebarItems.find(i => i.uuid === commUuid);
-            // Inyectar datos del canal
             const chatData = { ...commItem, channel_uuid: uuid, channel_name: channelItem.querySelector('.channel-name').innerText };
             
-            // UI Update
             const parentList = channelItem.parentElement;
             parentList.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
             channelItem.classList.add('active');
@@ -772,42 +769,42 @@ function initListListeners() {
             return;
         }
 
-        // Crear Canal
         const createBtn = e.target.closest('[data-action="create-channel-prompt"]');
         if (createBtn) {
             handleCreateChannel(createBtn.dataset.community);
             return;
         }
 
-        // Eliminar Canal
         const deleteChBtn = e.target.closest('[data-action="delete-channel"]');
         if (deleteChBtn) {
             e.stopPropagation();
             const chUuid = deleteChBtn.dataset.uuid;
-            // Buscar el community uuid del contenedor o del item de canal
             const commUuid = deleteChBtn.closest('.channel-item').dataset.community;
             handleDeleteChannel(chUuid, commUuid);
             return;
         }
 
-        // Clic en Item Principal (Header)
         const item = e.target.closest('.chat-item');
         if (item) {
             const uuid = item.dataset.uuid;
             const type = item.dataset.type; 
 
             if (type === 'community') {
-                // [MODIFICADO] Entrar a la vista de comunidad
-                renderCommunityView(uuid);
+                // [CORRECCIÓN CRÍTICA] Await para esperar la carga de canales
+                await renderCommunityView(uuid);
                 
-                // Seleccionar canal default
                 const channels = channelsCache[uuid] || [];
                 let targetChannel = null;
-                if (channels.length > 0) {
+                const itemData = sidebarItems.find(c => c.uuid === uuid);
+                
+                if (itemData && itemData.default_channel_uuid) {
+                    targetChannel = channels.find(c => c.uuid === itemData.default_channel_uuid);
+                }
+                
+                if (!targetChannel && channels.length > 0) {
                      targetChannel = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
                 }
                 
-                const itemData = sidebarItems.find(c => c.uuid === uuid);
                 if (itemData && targetChannel) {
                     itemData.channel_uuid = targetChannel.uuid;
                     itemData.channel_name = targetChannel.name;
@@ -815,7 +812,6 @@ function initListListeners() {
                     
                     openChat(uuid, itemData);
                     
-                    // Marcar activo en la lista recién renderizada
                     setTimeout(() => {
                         const chEl = document.querySelector(`.channel-item[data-uuid="${targetChannel.uuid}"]`);
                         if(chEl) chEl.classList.add('active');
@@ -823,14 +819,12 @@ function initListListeners() {
                 }
 
             } else {
-                // Chat Privado
                 const itemData = sidebarItems.find(c => c.uuid === uuid);
                 openChat(uuid, itemData);
             }
         }
     });
     
-    // [NUEVO] Botón de "Atrás" del sidebar (Drill-down)
     document.getElementById('chat-sidebar-panel')?.addEventListener('click', (e) => {
          const backBtn = e.target.closest('#btn-sidebar-back');
          if (backBtn) {
@@ -839,7 +833,6 @@ function initListListeners() {
     });
 
     document.body.addEventListener('click', async (e) => {
-        // Listeners de botones flotantes (unirse, bloquear, etc.) se mantienen igual...
         const joinBtn = e.target.closest('[data-action="join-public-community"]');
         if (joinBtn) {
             const id = joinBtn.dataset.id;
@@ -859,61 +852,22 @@ function initListListeners() {
         }
 
         const blockBtn = e.target.closest('[data-action="block-user-chat"]');
-        if (blockBtn) {
-            e.preventDefault();
-            document.querySelector('.dynamic-popover')?.remove();
-            await blockUserFromChat(blockBtn.dataset.uuid);
-            return;
-        }
-
+        if (blockBtn) { e.preventDefault(); document.querySelector('.dynamic-popover')?.remove(); await blockUserFromChat(blockBtn.dataset.uuid); return; }
         const unblockBtn = e.target.closest('[data-action="unblock-user-chat"]');
-        if (unblockBtn) {
-            e.preventDefault();
-            document.querySelector('.dynamic-popover')?.remove();
-            await unblockUserFromChat(unblockBtn.dataset.uuid);
-            return;
-        }
-
+        if (unblockBtn) { e.preventDefault(); document.querySelector('.dynamic-popover')?.remove(); await unblockUserFromChat(unblockBtn.dataset.uuid); return; }
         const pinAction = e.target.closest('[data-action="toggle-pin-chat"]');
-        if (pinAction) {
-            document.querySelector('.dynamic-popover')?.remove();
-            await togglePinChat(pinAction.dataset.uuid, pinAction.dataset.type);
-            return;
-        }
-
+        if (pinAction) { document.querySelector('.dynamic-popover')?.remove(); await togglePinChat(pinAction.dataset.uuid, pinAction.dataset.type); return; }
         const favAction = e.target.closest('[data-action="toggle-fav-chat"]');
-        if (favAction) {
-            document.querySelector('.dynamic-popover')?.remove();
-            await toggleFavChat(favAction.dataset.uuid, favAction.dataset.type);
-            return;
-        }
-
+        if (favAction) { document.querySelector('.dynamic-popover')?.remove(); await toggleFavChat(favAction.dataset.uuid, favAction.dataset.type); return; }
         const leaveAction = e.target.closest('[data-action="leave-community"]');
-        if (leaveAction) {
-            document.querySelector('.dynamic-popover')?.remove();
-            await leaveCommunity(leaveAction.dataset.uuid);
-            return;
-        }
-        
+        if (leaveAction) { document.querySelector('.dynamic-popover')?.remove(); await leaveCommunity(leaveAction.dataset.uuid); return; }
         const deleteChatAction = e.target.closest('[data-action="delete-chat-conversation"]');
         if (deleteChatAction) {
-            e.preventDefault();
-            const uuid = deleteChatAction.dataset.uuid;
-            document.querySelector('.dynamic-popover')?.remove();
-            
+            e.preventDefault(); const uuid = deleteChatAction.dataset.uuid; document.querySelector('.dynamic-popover')?.remove();
             if(!confirm('¿Seguro que quieres eliminar este chat? Solo se borrará para ti.')) return;
             const res = await postJson('api/chat_handler.php', { action: 'delete_conversation', target_uuid: uuid });
-            if(res.success) {
-                if(window.alertManager) window.alertManager.showAlert(res.message, 'success');
-                if (window.ACTIVE_CHAT_UUID === uuid) {
-                     window.ACTIVE_CHAT_UUID = null;
-                     if(window.navigateTo) window.navigateTo('main'); else window.location.href = window.BASE_PATH + 'main';
-                } else {
-                    loadSidebarList();
-                }
-            } else {
-                if(window.alertManager) window.alertManager.showAlert(res.message, 'error');
-            }
+            if(res.success) { if(window.alertManager) window.alertManager.showAlert(res.message, 'success'); if (window.ACTIVE_CHAT_UUID === uuid) { window.ACTIVE_CHAT_UUID = null; if(window.navigateTo) window.navigateTo('main'); else window.location.href = window.BASE_PATH + 'main'; } else { loadSidebarList(); } } 
+            else { if(window.alertManager) window.alertManager.showAlert(res.message, 'error'); }
             return;
         }
     });
@@ -927,7 +881,6 @@ function initListListeners() {
 
     document.addEventListener('local-chat-read', (e) => {
         const uuid = e.detail.uuid;
-        // Solo actualizamos si estamos en la vista principal y el item es visible
         if (currentSidebarView === 'main') {
             const item = document.querySelector(`.chat-item[data-uuid="${uuid}"]`);
             if (item) {
@@ -942,21 +895,17 @@ function initListListeners() {
             }
         }
         
-        // Actualizar dato en memoria
         const dataItem = sidebarItems.find(i => i.uuid === uuid);
         if (dataItem) dataItem.unread_count = 0;
     });
 
-    // [NUEVO] Escuchar evento desde chat-manager para sincronizar sidebar
     document.addEventListener('chat-opened', (e) => {
         const chatData = e.detail;
         if (chatData && chatData.type === 'community') {
-             // Si abrimos una comunidad y no estamos en su vista, renderizarla
              if (currentSidebarView !== 'community' || currentCommunityUuid !== chatData.uuid) {
                  renderCommunityView(chatData.uuid);
              }
              
-             // Marcar canal activo
              setTimeout(() => {
                  const channelUuid = window.ACTIVE_CHANNEL_UUID;
                  if (channelUuid) {
@@ -968,7 +917,6 @@ function initListListeners() {
         }
     });
     
-    // [NUEVO] Evento para resetear a la lista principal (ej: al cerrar chat)
     document.addEventListener('reset-chat-view', () => {
         renderSidebarList();
     });
@@ -1040,11 +988,9 @@ async function loadGroupDetails(uuid) {
 
     if (res.success) {
         const info = res.info;
-        
         const avatarSrc = info.profile_picture 
             ? (window.BASE_PATH || '/ProjectAurora/') + info.profile_picture 
             : `https://ui-avatars.com/api/?name=${encodeURIComponent(info.community_name)}`;
-        
         els.img.src = avatarSrc;
         els.name.textContent = info.community_name;
         
@@ -1059,14 +1005,11 @@ async function loadGroupDetails(uuid) {
                 <span class="comm-badge" style="margin-bottom:4px;">${typeText}</span><br>
                 <span style="font-size:12px; color:#888;">Código: <strong style="user-select:all;">${info.access_code}</strong></span>
             `;
-            
             if (els.count) els.count.textContent = `(${info.member_count})`;
             if (els.membersSection) els.membersSection.style.display = 'flex';
             renderGroupMembers(res.members, els.membersList);
         }
-
         renderGroupFiles(res.files, els.filesGrid);
-
     } else {
         els.filesGrid.innerHTML = `<p style="color:red; text-align:center;">Error al cargar</p>`;
     }
@@ -1074,30 +1017,16 @@ async function loadGroupDetails(uuid) {
 
 function renderGroupMembers(members, container) {
     if (!container) return;
-    
     if (!members || members.length === 0) {
         container.innerHTML = '<p class="info-no-files">No hay miembros visibles.</p>';
         return;
     }
-
     let html = '';
     members.forEach(m => {
-        const avatar = m.profile_picture 
-            ? (window.BASE_PATH || '/ProjectAurora/') + m.profile_picture 
-            : `https://ui-avatars.com/api/?name=${encodeURIComponent(m.username)}`;
-        
+        const avatar = m.profile_picture ? (window.BASE_PATH || '/ProjectAurora/') + m.profile_picture : `https://ui-avatars.com/api/?name=${encodeURIComponent(m.username)}`;
         const roleColor = (m.role === 'admin' || m.role === 'founder') ? '#d32f2f' : ((m.role === 'moderator') ? '#1976d2' : '#888');
         const roleText = m.role === 'founder' ? 'Fundador' : (m.role === 'admin' ? 'Admin' : (m.role === 'moderator' ? 'Mod' : 'Miembro'));
-
-        html += `
-            <div class="info-member-item">
-                <img src="${avatar}" class="info-member-avatar" alt="${m.username}">
-                <div class="info-member-details">
-                    <span class="info-member-name">${escapeHtml(m.username)}</span>
-                    <span class="info-member-role" style="color:${roleColor}; font-size:10px; font-weight:700;">${roleText}</span>
-                </div>
-            </div>
-        `;
+        html += `<div class="info-member-item"><img src="${avatar}" class="info-member-avatar" alt="${m.username}"><div class="info-member-details"><span class="info-member-name">${escapeHtml(m.username)}</span><span class="info-member-role" style="color:${roleColor}; font-size:10px; font-weight:700;">${roleText}</span></div></div>`;
     });
     container.innerHTML = html;
 }
@@ -1107,28 +1036,18 @@ function renderGroupFiles(files, container) {
         container.innerHTML = '<p class="info-no-files">No hay archivos multimedia compartidos.</p>';
         return;
     }
-
     const viewerItems = files.map(f => ({
         src: (window.BASE_PATH || '/ProjectAurora/') + f.file_path,
         type: 'image', 
         user: { name: f.username, avatar: '' }, 
         date: new Date(f.created_at).toLocaleDateString()
     }));
-    
     const jsonStr = JSON.stringify(viewerItems).replace(/'/g, "&apos;").replace(/"/g, '&quot;');
-
     container.setAttribute('data-media-items', jsonStr);
-
     let html = '';
     files.forEach((f, index) => {
         const src = (window.BASE_PATH || '/ProjectAurora/') + f.file_path;
-        html += `
-            <img src="${src}" 
-                 class="info-file-thumb" 
-                 data-action="view-media" 
-                 data-index="${index}" 
-                 loading="lazy">
-        `;
+        html += `<img src="${src}" class="info-file-thumb" data-action="view-media" data-index="${index}" loading="lazy">`;
     });
     container.innerHTML = html;
 }
@@ -1139,7 +1058,6 @@ export function initCommunitiesManager() {
     initJoinByCode(); 
     initSidebarFilters(); 
     initInfoPanelListener(); 
-    
     if (!window.communitiesListenersInit) {
         initListListeners();
         window.communitiesListenersInit = true;

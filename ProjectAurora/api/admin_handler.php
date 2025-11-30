@@ -85,6 +85,8 @@ function admin_audit_log($pdo, $targetUserId, $type, $oldVal, $newVal, $adminId)
 
 try {
 
+    // ... (Bloques existentes: dashboard, alert, user status, roles, etc. se mantienen igual hasta 'get_admin_community_details')
+
     if ($action === 'get_dashboard_stats') {
         $stmtTotal = $pdo->query("SELECT COUNT(*) FROM users WHERE account_status != 'deleted'");
         $totalUsers = $stmtTotal->fetchColumn();
@@ -195,6 +197,8 @@ try {
         } else { throw new Exception(translation('global.error_connection')); }
 
     } elseif ($action === 'admin_update_profile_picture') {
+        // ... (código existente de pfp)
+        // ...
         $targetId = (int)$data['target_id'] ?? 0;
         if (!$targetId) throw new Exception(translation('global.action_invalid'));
         if ($targetId === $currentAdminId) throw new Exception("Usa Configuración para editar tu perfil.");
@@ -238,6 +242,8 @@ try {
         } else throw new Exception(translation('global.error_connection'));
 
     } elseif ($action === 'admin_remove_profile_picture') {
+        // ... (código existente)
+        // ...
         $targetId = (int)$data['target_id'] ?? 0;
         if (!$targetId) throw new Exception(translation('global.action_invalid'));
         $stmt = $pdo->prepare("SELECT username, role, profile_picture FROM users WHERE id = ?");
@@ -272,6 +278,8 @@ try {
         } else throw new Exception(translation('global.error_connection'));
 
     } elseif ($action === 'admin_update_username') {
+        // ... (código existente)
+        // ...
         $targetId = (int)$data['target_id'] ?? 0;
         if ($targetId === $currentAdminId) throw new Exception("Usa Configuración para editar tu perfil.");
         $newUsername = trim($data['username'] ?? '');
@@ -299,6 +307,8 @@ try {
         } else throw new Exception(translation('global.error_connection'));
 
     } elseif ($action === 'admin_update_email') {
+        // ... (código existente)
+        // ...
         $targetId = (int)$data['target_id'] ?? 0;
         if ($targetId === $currentAdminId) throw new Exception("Usa Configuración para editar tu perfil.");
         $newEmail = strtolower(trim($data['email'] ?? ''));
@@ -391,7 +401,6 @@ try {
     // --- GESTIÓN DE COMUNIDADES ---
     } elseif ($action === 'list_communities') {
         $q = trim($data['q'] ?? '');
-        // [MODIFICADO] Agregar community_type
         $sql = "SELECT id, uuid, community_name, community_type, privacy, member_count, profile_picture FROM communities";
         $params = [];
         
@@ -410,12 +419,13 @@ try {
 
     } elseif ($action === 'get_admin_community_details') {
         $id = (int)($data['id'] ?? 0);
+        
+        // [MODIFICADO] Traer default_channel_id también
         $stmt = $pdo->prepare("SELECT * FROM communities WHERE id = ?");
         $stmt->execute([$id]);
         $community = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($community) {
-            // [MODIFICADO] Obtener canales
             $stmtCh = $pdo->prepare("SELECT * FROM community_channels WHERE community_id = ? ORDER BY created_at ASC");
             $stmtCh->execute([$id]);
             $community['channels'] = $stmtCh->fetchAll(PDO::FETCH_ASSOC);
@@ -437,13 +447,11 @@ try {
         $pfp = trim($data['profile_picture'] ?? '');
         $banner = trim($data['banner_picture'] ?? '');
         
-        // [NUEVO] Canales
         $channelsRaw = $data['channels'] ?? []; 
 
         if (empty($name) || empty($code)) throw new Exception("Nombre y Código de acceso son obligatorios.");
         if (!in_array($privacy, ['public', 'private'])) throw new Exception("Privacidad inválida.");
 
-        // Verificar código único
         $stmtCheck = $pdo->prepare("SELECT id FROM communities WHERE access_code = ? AND id != ?");
         $stmtCheck->execute([$code, $id]);
         if ($stmtCheck->rowCount() > 0) throw new Exception("El código de acceso ya está en uso.");
@@ -459,9 +467,8 @@ try {
                 $id = $pdo->lastInsertId(); 
                 $msg = "Comunidad creada correctamente.";
                 
-                // Crear canal por defecto si no viene ninguno
                 if (empty($channelsRaw)) {
-                    $channelsRaw[] = ['id' => 0, 'name' => 'General', 'type' => 'text'];
+                    $channelsRaw[] = ['id' => 0, 'name' => 'General', 'type' => 'text', 'is_default' => true];
                 }
             } else {
                 // EDITAR
@@ -471,17 +478,18 @@ try {
             }
 
             // --- PROCESAR CANALES ---
-            // 1. Obtener IDs existentes
             $stmtCurrentIds = $pdo->prepare("SELECT id FROM community_channels WHERE community_id = ?");
             $stmtCurrentIds->execute([$id]);
             $existingIds = $stmtCurrentIds->fetchAll(PDO::FETCH_COLUMN);
 
             $submittedIds = [];
+            $newDefaultChannelId = null; // ID del canal marcado como default
 
             foreach ($channelsRaw as $ch) {
                 $chId = (int)($ch['id'] ?? 0);
                 $chName = trim($ch['name'] ?? 'Canal');
                 $chType = $ch['type'] ?? 'text';
+                $isDefault = isset($ch['is_default']) && $ch['is_default'] === true; // Flag desde JS
                 
                 if (empty($chName)) continue;
 
@@ -490,21 +498,40 @@ try {
                     $stmtUpdCh = $pdo->prepare("UPDATE community_channels SET name = ?, type = ? WHERE id = ? AND community_id = ?");
                     $stmtUpdCh->execute([$chName, $chType, $chId, $id]);
                     $submittedIds[] = $chId;
+                    
+                    if ($isDefault) $newDefaultChannelId = $chId;
+
                 } else {
                     // INSERT
                     $chUuid = generate_uuid();
                     $stmtInsCh = $pdo->prepare("INSERT INTO community_channels (uuid, community_id, name, type, created_at) VALUES (?, ?, ?, ?, NOW())");
                     $stmtInsCh->execute([$chUuid, $id, $chName, $chType]);
+                    $newId = $pdo->lastInsertId();
+                    
+                    if ($isDefault) $newDefaultChannelId = $newId;
                 }
             }
 
-            // 2. Eliminar canales removidos
+            // Eliminar canales
             $toDelete = array_diff($existingIds, $submittedIds);
             if (!empty($toDelete)) {
                 $placeholders = implode(',', array_fill(0, count($toDelete), '?'));
                 $stmtDelCh = $pdo->prepare("DELETE FROM community_channels WHERE id IN ($placeholders) AND community_id = ?");
                 $params = array_merge($toDelete, [$id]);
                 $stmtDelCh->execute($params);
+            }
+
+            // [NUEVO] Actualizar la comunidad con el ID del canal por defecto
+            if ($newDefaultChannelId) {
+                $pdo->prepare("UPDATE communities SET default_channel_id = ? WHERE id = ?")->execute([$newDefaultChannelId, $id]);
+            } else {
+                // Fallback: Si no se marcó ninguno (raro), tomar el primero
+                $stmtFirst = $pdo->prepare("SELECT id FROM community_channels WHERE community_id = ? ORDER BY created_at ASC LIMIT 1");
+                $stmtFirst->execute([$id]);
+                $firstId = $stmtFirst->fetchColumn();
+                if ($firstId) {
+                    $pdo->prepare("UPDATE communities SET default_channel_id = ? WHERE id = ?")->execute([$firstId, $id]);
+                }
             }
 
             $pdo->commit();
