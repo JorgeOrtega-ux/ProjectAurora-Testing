@@ -500,15 +500,24 @@ async function loadSidebarList(shouldOpenActive = false) {
                     const icon = activeEl.querySelector('.expand-icon');
                     if(icon) icon.style.transform = 'rotate(180deg)';
                     
+                    // [FIX] Esperar a cargar canales si no están
                     if (!channelsCache[window.ACTIVE_CHAT_UUID]) {
                         await loadChannels(window.ACTIVE_CHAT_UUID);
                     } else {
                         renderChannelList(window.ACTIVE_CHAT_UUID, channelsCache[window.ACTIVE_CHAT_UUID], getRoleFromCache(window.ACTIVE_CHAT_UUID));
                     }
                     
-                    // Marcar canal activo
-                    if (window.ACTIVE_CHANNEL_UUID) {
-                        const chEl = channelsList.querySelector(`.channel-item[data-uuid="${window.ACTIVE_CHANNEL_UUID}"]`);
+                    // Marcar canal activo si existe, o default
+                    let currentCh = window.ACTIVE_CHANNEL_UUID;
+                    if (!currentCh && channelsCache[window.ACTIVE_CHAT_UUID]) {
+                         // Si no hay canal activo definido, pero estamos abriendo, buscar default
+                         // Nota: Esto es visual solo, el openChat real ocurre abajo
+                         const def = channelsCache[window.ACTIVE_CHAT_UUID].find(c => c.name.toLowerCase() === 'general') || channelsCache[window.ACTIVE_CHAT_UUID][0];
+                         if (def) currentCh = def.uuid;
+                    }
+
+                    if (currentCh) {
+                        const chEl = channelsList.querySelector(`.channel-item[data-uuid="${currentCh}"]`);
                         if(chEl) chEl.classList.add('active');
                     }
                 }
@@ -517,6 +526,24 @@ async function loadSidebarList(shouldOpenActive = false) {
 
         const itemData = sidebarItems.find(c => c.uuid === window.ACTIVE_CHAT_UUID);
         if (shouldOpenActive && itemData) {
+            // [FIX RELOAD] Inyectar canal default si es comunidad y no hay canal activo definido
+            if (itemData.type === 'community') {
+                 const channels = channelsCache[window.ACTIVE_CHAT_UUID] || [];
+                 let targetCh = null;
+                 
+                 if (window.ACTIVE_CHANNEL_UUID) {
+                     targetCh = channels.find(c => c.uuid === window.ACTIVE_CHANNEL_UUID);
+                 }
+                 if (!targetCh && channels.length > 0) {
+                     targetCh = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
+                 }
+
+                 if (targetCh) {
+                     itemData.channel_uuid = targetCh.uuid;
+                     itemData.channel_name = targetCh.name;
+                     window.ACTIVE_CHANNEL_UUID = targetCh.uuid;
+                 }
+            }
             openChat(window.ACTIVE_CHAT_UUID, itemData || null);
         }
     }
@@ -737,7 +764,7 @@ function initListListeners() {
     });
 
     // Main List Click
-    document.getElementById('my-communities-list')?.addEventListener('click', (e) => {
+    document.getElementById('my-communities-list')?.addEventListener('click', async (e) => {
         
         // Menú Contextual
         const chatMenuBtn = e.target.closest('[data-action="open-chat-menu"]');
@@ -806,27 +833,66 @@ function initListListeners() {
                         if(icon) icon.style.transform = 'rotate(180deg)';
                         // Cargar canales si no están
                         if (chList.dataset.loaded !== "true") {
-                            loadChannels(uuid);
+                             // [MODIFICADO] No bloquear visualmente, pero asegurarse que se carguen
+                             loadChannels(uuid);
                         }
                     } else {
-                        chList.classList.add('d-none');
-                        if(icon) icon.style.transform = 'rotate(0deg)';
+                        // Si ya está abierto y es la misma comunidad activa, solo colapsamos
+                        if (window.ACTIVE_CHAT_UUID !== uuid) { 
+                             // Si no es la activa, no colapsamos, permitimos el cambio de chat
+                        } else {
+                             chList.classList.add('d-none');
+                             if(icon) icon.style.transform = 'rotate(0deg)';
+                        }
                     }
                 }
                 
-                // Opcional: Abrir el canal general o mantener estado
-                // Si no hay chat activo, abrir el primero
+                // --- LOGICA DE SELECCIÓN AUTOMÁTICA DE CANAL ---
                 if (window.ACTIVE_CHAT_UUID !== uuid) {
-                    const cached = channelsCache[uuid];
+                    // 1. Verificar si tenemos los canales en caché
+                    if (!channelsCache[uuid]) {
+                        // Si no están, ESPERAMOS a que carguen antes de abrir el chat
+                        await loadChannels(uuid);
+                    }
+
+                    // 2. Obtener el canal por defecto (General o el primero)
+                    const channels = channelsCache[uuid] || [];
                     let targetChannel = null;
-                    if (cached && cached.length > 0) targetChannel = cached[0];
+                    
+                    if (channels.length > 0) {
+                        // Intentar buscar 'General' (case insensitive), si no, el primero
+                        targetChannel = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
+                    }
                     
                     const itemData = sidebarItems.find(c => c.uuid === uuid);
+                    
                     if (itemData) {
-                        itemData.channel_uuid = targetChannel ? targetChannel.uuid : null;
+                        // 3. Inyectar datos del canal para que el header se renderice bien
+                        if (targetChannel) {
+                            itemData.channel_uuid = targetChannel.uuid;
+                            itemData.channel_name = targetChannel.name;
+                            
+                            // Establecer globalmente para que el renderizado visual lo marque activo
+                            window.ACTIVE_CHANNEL_UUID = targetChannel.uuid;
+                        } else {
+                            itemData.channel_uuid = null;
+                            itemData.channel_name = null;
+                        }
+
+                        // 4. Abrir el chat con los datos completos
                         openChat(uuid, itemData);
+
+                        // 5. Actualizar visualmente la clase .active en la lista de canales
+                        if (targetChannel && chList) {
+                            setTimeout(() => {
+                                chList.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+                                const activeCh = chList.querySelector(`.channel-item[data-uuid="${targetChannel.uuid}"]`);
+                                if (activeCh) activeCh.classList.add('active');
+                            }, 50);
+                        }
                     }
                 }
+                // -----------------------
 
             } else {
                 // Chat Privado
