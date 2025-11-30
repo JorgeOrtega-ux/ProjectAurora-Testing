@@ -1,7 +1,7 @@
 /* public/assets/css/chat.css */
 
 /* =========================================
-   1. LAYOUT CHAT (TIPO WHATSAPP WEB)
+   1. LAYOUT CHAT
    ========================================= */
 
 .chat-layout-container {
@@ -43,6 +43,9 @@
     font-size: 20px;
     font-weight: 700;
     color: #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .chat-sidebar-actions {
@@ -150,16 +153,18 @@
     transition: background-color 0.2s;
     align-items: center;
     position: relative;
-    /* overflow: visible; Importante para que el popover salga */
 }
 
 .chat-item:hover {
-     border-color: #000;
+    border-color: #000;
+    background-color: #f9f9f9;
 }
 
 .chat-item.active {
     border-color: #000;
+    background-color: #f0f0f0;
 }
+
 /* Wrapper para Avatar */
 .chat-item-avatar-wrapper {
     width: 40px;
@@ -232,10 +237,8 @@
 .chat-item-info {
     display: flex;
     flex-direction: column;
-    /* overflow: hidden;  <-- ELIMINADO para permitir que el popover salga del contenedor */
     flex: 1;
     min-width: 0;
-    /* Necesario para que el texto se corte correctamente en flex */
     gap: 4px;
 }
 
@@ -276,7 +279,6 @@
     min-width: 0;
 }
 
-/* [MODIFICADO] Contenedor de acciones: Relative para contener el popover absolute */
 .chat-item-actions {
     display: flex;
     align-items: center;
@@ -284,7 +286,6 @@
     flex-shrink: 0;
     margin-left: 8px;
     position: relative;
-    /* CLAVE: Contexto de posicionamiento */
 }
 
 /* --- AREA PRINCIPAL (DERECHA) --- */
@@ -448,71 +449,6 @@
     z-index: 1;
 }
 
-.chat-message-avatar::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid transparent;
-    transition: border-color 0.2s ease;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.chat-message-avatar[data-role="user"]::before {
-    border-color: #cccccc;
-}
-
-.chat-message-avatar[data-role="moderator"]::before {
-    border-color: #0000FF;
-}
-
-.chat-message-avatar[data-role="administrator"]::before {
-    border-color: #FF0000;
-}
-
-.chat-message-avatar[data-role="founder"]::before {
-    border: none;
-    background-image: conic-gradient(from 300deg, #D32029 0deg 90deg, #206BD3 90deg 210deg, #28A745 210deg 300deg, #FFC107 300deg 360deg);
-    mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff 0);
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #fff 0);
-}
-
-.mobile-back-btn {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .chat-sidebar {
-        width: 100%;
-        position: absolute;
-        z-index: 10;
-        transition: transform 0.3s ease;
-    }
-
-    .chat-main-area {
-        width: 100%;
-        position: absolute;
-        z-index: 5;
-    }
-
-    .chat-layout-container.chat-active .chat-sidebar {
-        transform: translateX(-100%);
-    }
-
-    .chat-layout-container.chat-active .chat-main-area {
-        z-index: 15;
-    }
-
-    .mobile-back-btn {
-        display: flex;
-        margin-right: 4px;
-    }
-}
-
 .unread-counter {
     background-color: #1976d2;
     color: #fff;
@@ -531,8 +467,126 @@
 }
 
 /* =========================================
-   2. ESTILOS PARA RESPONDER MENSAJES Y OPCIONES
+   2. ESTILOS PARA CANALES (NUEVO DRILL-DOWN)
    ========================================= */
+
+/* El contenedor wrapper del item */
+.chat-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* El Item de Canal en la Vista de Comunidad */
+.channel-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #444;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    gap: 10px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    user-select: none;
+    margin-bottom: 2px;
+}
+
+.channel-item:hover {
+    background-color: #f0f0f0;
+}
+
+.channel-item.active {
+    background-color: #e3f2fd;
+    /* Azul muy claro */
+    color: #1976d2;
+    font-weight: 600;
+    border-color: rgba(25, 118, 210, 0.1);
+}
+
+.channel-icon {
+    font-size: 20px;
+    color: #888;
+}
+
+.channel-item.active .channel-icon {
+    color: #1976d2;
+}
+
+.channel-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botón eliminar canal (visible en hover) */
+.channel-action-btn {
+    padding: 4px;
+    border-radius: 4px;
+    color: #999;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.channel-item:hover .channel-action-btn {
+    opacity: 1;
+}
+
+.channel-action-btn:hover {
+    background-color: #ffcdd2;
+    color: #d32f2f;
+}
+
+/* Botón Crear Canal */
+.channel-create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    transition: all 0.2s;
+}
+
+.channel-create-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+    border-color: #999;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.chat-list-wrapper>div {
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* =========================================
+   3. ESTILOS MENSAJES (BUBBLES)
+   ========================================= */
+
 .message-row {
     position: relative;
 }
@@ -557,13 +611,6 @@
     opacity: 1;
 }
 
-@media (hover: none) {
-    .message-options-btn {
-        opacity: 1;
-        color: #ccc;
-    }
-}
-
 .message-options-popover {
     position: absolute;
     background: white;
@@ -574,7 +621,6 @@
     display: flex;
     flex-direction: column;
     min-width: 120px;
-    top: 20px;
 }
 
 .message-option-item {
@@ -659,15 +705,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.component-icon-button.small {
-    width: 24px;
-    height: 24px;
-}
-
-.component-icon-button.small span {
-    font-size: 18px;
 }
 
 #attachment-preview-area {
@@ -755,7 +792,7 @@
 }
 
 /* =========================================
-   3. SIDEBAR DERECHA (INFO GRUPO)
+   4. SIDEBAR DERECHA (INFO GRUPO)
    ========================================= */
 .chat-info-sidebar {
     width: 300px;
@@ -766,7 +803,6 @@
     flex-direction: column;
     flex-shrink: 0;
     z-index: 5;
-    transition: margin-right 0.3s ease;
     border-radius: 12px;
 }
 
@@ -934,7 +970,7 @@
 }
 
 /* =========================================
-   4. MEDIA VIEWER (LIGHTBOX)
+   5. MEDIA VIEWER
    ========================================= */
 .media-viewer {
     position: fixed;
@@ -961,7 +997,6 @@
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     color: white;
     flex-shrink: 0;
 }
@@ -1029,7 +1064,6 @@
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
 }
 
 .viewer-nav-btn {
@@ -1062,24 +1096,8 @@
     right: 20px;
 }
 
-@media (max-width: 600px) {
-    .viewer-nav-btn {
-        width: 40px;
-        height: 40px;
-        background-color: transparent;
-    }
-
-    .viewer-nav-btn.prev {
-        left: 5px;
-    }
-
-    .viewer-nav-btn.next {
-        right: 5px;
-    }
-}
-
 /* =========================================
-   5. COMPONENTES DE CHAT EXTRAS
+   6. OTROS COMPONENTES
    ========================================= */
 .chat-date-divider {
     display: flex;
@@ -1118,13 +1136,7 @@
     width: 100%;
 }
 
-/* =========================================
-   6. MENÚ FLOTANTE DE CHAT (SIDEBAR)
-   ========================================= */
-
 .chat-hover-btn {
-    position: static;
-    transform: none;
     width: 20px;
     height: 20px;
     border: none;
@@ -1133,9 +1145,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: none;
     opacity: 0;
-    /* Oculto por defecto */
     transition: opacity 0.2s, color 0.2s;
     color: #999;
 }
@@ -1143,13 +1153,6 @@
 .chat-item:hover .chat-hover-btn,
 .chat-hover-btn.active {
     opacity: 1;
-}
-
-@media (hover: none) {
-    .chat-hover-btn {
-        opacity: 1;
-        color: #ccc;
-    }
 }
 
 .chat-hover-btn:hover {
@@ -1160,14 +1163,10 @@
     font-size: 20px;
 }
 
-/* [MODIFICADO] Nuevo estilo para popover dinámico (ABSOLUTE) */
 .popover-module.dynamic-popover {
     position: absolute;
-    /* CLAVE: Absolute relativo al padre */
     top: 100%;
-    /* Justo debajo */
     right: 0;
-    /* Alineado a la derecha */
     left: auto;
     width: 200px;
     z-index: 100;
@@ -1192,9 +1191,7 @@
     color: #fbc02d;
 }
 
-/* =========================================
-   7. INDICADOR DE ESCRIBIENDO (TYPING)
-   ========================================= */
+/* Typing */
 .typing-dots::after {
     content: '.';
     animation: typing 1.5s steps(5, end) infinite;
@@ -1230,115 +1227,26 @@
     transition: color 0.2s;
 }
 
-/* =========================================
-   8. CANALES Y ACORDEÓN (NUEVO)
-   ========================================= */
-.chat-item-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .chat-sidebar {
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+        transition: transform 0.3s ease;
+    }
 
-.channels-list-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 12px; /* Indentación visual */
-    padding-bottom: 8px;
-    background-color: #f9f9f9; 
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    margin-top: -8px; /* Pegado al item padre */
-    padding-top: 8px;
-    border: 1px solid #00000020;
-    border-top: none;
-    animation: fadeIn 0.2s ease-out;
-}
+    .chat-main-area {
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+    }
 
-.channels-list-container.d-none {
-    display: none;
-}
+    .chat-layout-container.chat-active .chat-sidebar {
+        transform: translateX(-100%);
+    }
 
-.channel-item {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 8px;
-    color: #666;
-    font-size: 14px;
-    transition: background 0.2s;
-    gap: 8px;
-    margin-right: 8px;
-    user-select: none;
-}
-
-.channel-item:hover {
-    background-color: #e0e0e0;
-    color: #000;
-}
-
-.channel-item.active {
-    background-color: #e3f2fd; /* Azul claro */
-    color: #1976d2;
-    font-weight: 600;
-}
-
-.channel-icon {
-    font-size: 18px;
-    color: #999;
-}
-
-.channel-item.active .channel-icon {
-    color: #1976d2;
-}
-
-.channel-name {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Botones de acción (eliminar canal) solo visibles en hover */
-.channel-action-btn {
-    padding: 4px;
-    border-radius: 4px;
-    color: #999;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    opacity: 0; 
-    transition: opacity 0.2s;
-}
-
-.channel-item:hover .channel-action-btn {
-    opacity: 1;
-}
-
-.channel-action-btn:hover {
-    background-color: #ffcdd2;
-    color: #d32f2f;
-}
-
-/* Botón Crear Canal */
-.channel-create-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    font-size: 13px;
-    color: #666;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-top: 4px;
-    margin-right: 8px;
-    transition: background 0.2s;
-}
-
-.channel-create-btn:hover {
-    background-color: #f0f0f0;
-    color: #000;
+    .chat-layout-container.chat-active .chat-main-area {
+        z-index: 15;
+    }
 }

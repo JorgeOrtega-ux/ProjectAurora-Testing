@@ -69,11 +69,9 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                 
                 <div class="chat-header">
                     <div class="chat-header-left">
-                        
                         <div class="chat-avatar-container">
                             <img id="chat-header-img" src="" alt="" class="chat-avatar-img">
                         </div>
-                        
                         <div class="chat-info" id="chat-header-info-clickable" style="cursor: pointer;">
                             <h3 id="chat-header-title" class="chat-title">Cargando...</h3>
                             <span id="chat-header-status" class="chat-status">...</span>
@@ -91,8 +89,7 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                 </div>
 
                 <div id="attachment-preview-area" class="d-none">
-                    <div class="preview-grid" id="preview-grid">
-                        </div>
+                    <div class="preview-grid" id="preview-grid"></div>
                 </div>
 
                 <div id="reply-preview-container" class="reply-preview-bar d-none">
@@ -107,11 +104,9 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
 
                 <div class="chat-input-area">
                     <input type="file" id="chat-file-input" multiple accept="image/*" style="display: none;">
-                    
                     <button class="component-icon-button" id="btn-attach-file" title="Adjuntar imágenes (Máx 4)">
                         <span class="material-symbols-rounded">attach_file</span>
                     </button>
-
                     <input type="text" class="chat-message-input" placeholder="Escribe un mensaje...">
                     <button class="component-icon-button" id="btn-send-message">
                         <span class="material-symbols-rounded">send</span>
@@ -119,7 +114,6 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                 </div>
 
             </div>
-
         </div>
 
         <div class="chat-info-sidebar d-none" id="chat-info-panel">
@@ -136,26 +130,20 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                     <h2 id="info-group-name" class="info-group-name">...</h2>
                     <p id="info-group-desc" class="info-group-desc">...</p>
                 </div>
-
                 <hr class="component-divider">
-
                 <div class="info-section">
                     <h3 class="info-section-title">Miembros <span id="info-member-count" style="font-weight:400; color:#666;">(0)</span></h3>
                     <div id="info-members-list" class="info-members-list">
                         <div class="small-spinner"></div>
                     </div>
                 </div>
-
                 <hr class="component-divider">
-
                 <div class="info-section">
                     <h3 class="info-section-title">Archivos recientes</h3>
-                    <div id="info-files-grid" class="info-files-grid">
-                        </div>
+                    <div id="info-files-grid" class="info-files-grid"></div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div id="media-viewer-overlay" class="media-viewer d-none">
@@ -167,7 +155,6 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                     <span id="viewer-date" style="font-size:12px; color:#ccc;">Fecha</span>
                 </div>
             </div>
-            
             <div class="media-viewer-controls">
                 <span id="viewer-counter" class="viewer-counter">1 / 1</span>
                 <button class="component-icon-button viewer-btn" data-action="close-viewer">
@@ -175,14 +162,11 @@ $initType = $activeContextType ?? 'community'; // 'community' | 'private'
                 </button>
             </div>
         </div>
-
         <div class="media-viewer-content">
             <button class="viewer-nav-btn prev" data-action="viewer-prev">
                 <span class="material-symbols-rounded">chevron_left</span>
             </button>
-            
             <img id="viewer-main-image" src="" alt="Vista previa">
-            
             <button class="viewer-nav-btn next" data-action="viewer-next">
                 <span class="material-symbols-rounded">chevron_right</span>
             </button>

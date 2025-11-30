@@ -7,8 +7,12 @@ import { openChat } from './chat-manager.js';
 let sidebarItems = []; 
 let currentFilter = 'all'; 
 let currentSearchQuery = ''; 
-// Cache para evitar re-fetching constante de canales al colapsar/expandir
+// Cache para evitar re-fetching constante de canales
 const channelsCache = {}; 
+
+// Estado de la vista del sidebar: 'main' | 'community'
+let currentSidebarView = 'main';
+let currentCommunityUuid = null;
 
 function formatChatTime(dateString) {
     if (!dateString) return '';
@@ -24,6 +28,7 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 
+// --- RENDERIZADO DE ITEMS DE LA LISTA PRINCIPAL (CHATS) ---
 function renderChatListItem(item) {
     const isPrivate = (item.type === 'private');
     
@@ -31,8 +36,8 @@ function renderChatListItem(item) {
         (window.BASE_PATH || '/ProjectAurora/') + item.profile_picture : 
         'https://ui-avatars.com/api/?name=' + encodeURIComponent(item.name);
         
-    // En comunidades, la clase active se gestiona a nivel de canal o cabecera
-    const isActive = (!isPrivate && item.uuid === window.ACTIVE_CHAT_UUID && !window.ACTIVE_CHANNEL_UUID) ? 'active' : '';
+    // En la lista principal, solo marcamos activo si es un chat privado
+    const isActive = (isPrivate && item.uuid === window.ACTIVE_CHAT_UUID) ? 'active' : '';
     
     let lastMsg = item.last_message ? escapeHtml(item.last_message) : (item.last_message_at ? 'Imagen' : (isPrivate ? "Nuevo chat" : "Toca para ver canales"));
     if (isPrivate && !item.last_message && !item.last_message_at) lastMsg = "Iniciar conversación";
@@ -61,23 +66,13 @@ function renderChatListItem(item) {
     const favAttr = isFavorite ? 'true' : 'false';
     const blockedAttr = isBlocked ? 'true' : 'false';
 
-    // Contenedor de canales (Oculto por defecto)
-    let channelsContainer = '';
-    let expandIcon = '';
-    
-    if (!isPrivate) {
-        expandIcon = `<span class="material-symbols-rounded expand-icon" style="font-size:18px; color:#999; transition: transform 0.2s;">expand_more</span>`;
-        channelsContainer = `
-        <div class="channels-list-container d-none" id="channels-${item.uuid}" data-loaded="false">
-            <div class="small-spinner" style="margin: 10px auto;"></div>
-        </div>`;
-    }
+    // [MODIFICADO] Eliminado el contenedor de canales (acordeón)
+    const actionType = isPrivate ? 'select-chat' : 'enter-community';
 
     return `
     <div class="chat-item-wrapper" data-uuid="${item.uuid}">
         <div class="chat-item ${isActive}" 
-             id="sidebar-item-${item.uuid}" 
-             data-action="${isPrivate ? 'select-chat' : 'toggle-community'}" 
+             data-action="${actionType}" 
              data-uuid="${item.uuid}" 
              data-type="${item.type}"
              data-pinned="${pinnedAttr}" 
@@ -100,25 +95,24 @@ function renderChatListItem(item) {
                     <div class="chat-item-actions">
                         ${badgeHtml}
                         ${indicatorsIcons}
-                        ${expandIcon}
                     </div>
                 </div>
             </div>
         </div>
-        ${channelsContainer}
     </div>`;
 }
 
+// --- RENDERIZADO DE LA VISTA PRINCIPAL ---
 function renderSidebarList() {
+    currentSidebarView = 'main';
+    currentCommunityUuid = null;
+
     const container = document.getElementById('my-communities-list');
     if (!container) return;
 
-    // Guardar estado de expansión actual antes de redibujar
-    const expandedUuids = [];
-    container.querySelectorAll('.channels-list-container:not(.d-none)').forEach(el => {
-        expandedUuids.push(el.id.replace('channels-', ''));
-    });
-
+    // Restaurar Cabecera y Filtros
+    restoreMainHeader();
+    
     container.innerHTML = '';
 
     const filteredItems = sidebarItems.filter(item => {
@@ -136,26 +130,6 @@ function renderSidebarList() {
 
     if (filteredItems.length > 0) {
         container.innerHTML = filteredItems.map(c => renderChatListItem(c)).join('');
-        
-        // Restaurar expansiones
-        expandedUuids.forEach(uuid => {
-            const chContainer = document.getElementById(`channels-${uuid}`);
-            if (chContainer) {
-                chContainer.classList.remove('d-none');
-                // Rotar icono
-                const header = document.getElementById(`sidebar-item-${uuid}`);
-                const icon = header?.querySelector('.expand-icon');
-                if (icon) icon.style.transform = 'rotate(180deg)';
-                
-                // Si ya teníamos caché, renderizar de inmediato
-                if (channelsCache[uuid]) {
-                    renderChannelList(uuid, channelsCache[uuid], getRoleFromCache(uuid));
-                } else {
-                    loadChannels(uuid);
-                }
-            }
-        });
-
     } else {
         let msg = 'No hay chats que mostrar.';
         if (currentFilter === 'unread') msg = 'No tienes mensajes sin leer.';
@@ -165,15 +139,79 @@ function renderSidebarList() {
     }
 }
 
+function restoreMainHeader() {
+    const titleEl = document.querySelector('.chat-sidebar-title');
+    const actionsEl = document.querySelector('.chat-sidebar-actions');
+    const searchEl = document.querySelector('.chat-sidebar-search');
+    const badgesEl = document.querySelector('.chat-sidebar-badges');
+
+    if (titleEl) titleEl.textContent = 'Chats';
+    if (actionsEl) actionsEl.style.display = 'flex';
+    if (searchEl) searchEl.style.display = 'block';
+    if (badgesEl) badgesEl.style.display = 'grid';
+}
+
+function setupCommunityHeader(communityItem) {
+    const titleEl = document.querySelector('.chat-sidebar-title');
+    const actionsEl = document.querySelector('.chat-sidebar-actions');
+    const searchEl = document.querySelector('.chat-sidebar-search');
+    const badgesEl = document.querySelector('.chat-sidebar-badges');
+
+    // Ocultar elementos de la vista principal
+    if (actionsEl) actionsEl.style.display = 'none';
+    if (searchEl) searchEl.style.display = 'none';
+    if (badgesEl) badgesEl.style.display = 'none';
+
+    // Configurar cabecera de comunidad
+    if (titleEl) {
+        const avatarSrc = communityItem.profile_picture ? 
+            (window.BASE_PATH || '/ProjectAurora/') + communityItem.profile_picture : 
+            'https://ui-avatars.com/api/?name=' + encodeURIComponent(communityItem.name);
+            
+        titleEl.innerHTML = `
+            <div style="display:flex; align-items:center; gap:12px; width:100%;">
+                <button class="component-icon-button" id="btn-sidebar-back" style="width:32px; height:32px; border:none;">
+                    <span class="material-symbols-rounded">arrow_back</span>
+                </button>
+                <div style="display:flex; align-items:center; gap:8px; overflow:hidden;">
+                    <img src="${avatarSrc}" style="width:32px; height:32px; border-radius:8px; object-fit:cover; flex-shrink:0;">
+                    <span style="font-size:16px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(communityItem.name)}</span>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// --- RENDERIZADO DE LA VISTA DE COMUNIDAD (Drill-down) ---
+async function renderCommunityView(uuid) {
+    currentSidebarView = 'community';
+    currentCommunityUuid = uuid;
+
+    const item = sidebarItems.find(i => i.uuid === uuid);
+    if (!item) return; // Si no existe en la lista (raro), no hacemos nada
+
+    setupCommunityHeader(item);
+
+    const container = document.getElementById('my-communities-list');
+    if (container) {
+        container.innerHTML = '<div class="small-spinner" style="margin: 40px auto;"></div>';
+    }
+
+    // Verificar caché o cargar canales
+    if (!channelsCache[uuid]) {
+        await loadChannels(uuid);
+    }
+    
+    // Renderizar canales
+    renderChannelList(uuid, channelsCache[uuid] || [], item.role);
+}
+
 function getRoleFromCache(uuid) {
     const item = sidebarItems.find(i => i.uuid === uuid);
     return item ? item.role : 'member';
 }
 
 async function loadChannels(communityUuid) {
-    const container = document.getElementById(`channels-${communityUuid}`);
-    if (!container) return;
-
     const res = await postJson('api/communities_handler.php', { 
         action: 'get_community_details', 
         uuid: communityUuid 
@@ -181,26 +219,26 @@ async function loadChannels(communityUuid) {
 
     if (res.success) {
         const role = res.info.role || 'member';
-        // Guardar rol en el item local por si acaso
         const item = sidebarItems.find(i => i.uuid === communityUuid);
         if (item) item.role = role;
 
         channelsCache[communityUuid] = res.channels;
-        renderChannelList(communityUuid, res.channels, role);
-        container.dataset.loaded = "true";
     } else {
-        container.innerHTML = `<div style="padding:10px; color:red; font-size:12px; text-align:center;">Error cargando canales</div>`;
+        channelsCache[communityUuid] = []; // Fallback vacío
     }
 }
 
 function renderChannelList(communityUuid, channels, userRole) {
-    const container = document.getElementById(`channels-${communityUuid}`);
+    const container = document.getElementById('my-communities-list');
     if (!container) return;
 
     const isAdmin = ['admin', 'founder'].includes(userRole);
     let html = '';
 
     if (channels && channels.length > 0) {
+        // Cabecera de sección "CANALES"
+        html += `<div style="padding: 12px 16px; font-size: 12px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Canales</div>`;
+
         channels.forEach(ch => {
             const isChActive = (ch.uuid === window.ACTIVE_CHANNEL_UUID) ? 'active' : '';
             const icon = (ch.type === 'announcement') ? 'campaign' : 'tag';
@@ -214,20 +252,20 @@ function renderChannelList(communityUuid, channels, userRole) {
             }
 
             html += `
-            <div class="channel-item ${isChActive}" data-action="select-channel" data-uuid="${ch.uuid}" data-community="${communityUuid}">
+            <div class="channel-item ${isChActive}" data-action="select-channel" data-uuid="${ch.uuid}" data-community="${communityUuid}" style="margin: 0 8px 4px 8px;">
                 <span class="material-symbols-rounded channel-icon">${icon}</span>
                 <span class="channel-name">${escapeHtml(ch.name)}</span>
                 ${deleteBtn}
             </div>`;
         });
     } else {
-        html = `<div style="padding:8px 12px; font-size:12px; color:#999; font-style:italic;">No hay canales</div>`;
+        html = `<div style="padding:20px; font-size:13px; color:#999; text-align:center;">No hay canales disponibles.</div>`;
     }
 
     // Botón Crear Canal (Solo Admins)
     if (isAdmin) {
         html += `
-        <div class="channel-create-btn" data-action="create-channel-prompt" data-community="${communityUuid}">
+        <div class="channel-create-btn" data-action="create-channel-prompt" data-community="${communityUuid}" style="margin: 8px 16px;">
             <span class="material-symbols-rounded">add</span> Crear canal
         </div>`;
     }
@@ -239,12 +277,10 @@ async function handleCreateChannel(communityUuid) {
     const name = prompt("Nombre del nuevo canal:");
     if (!name) return;
     
-    // Limpieza básica
     const cleanName = name.trim().substring(0, 20);
     if (cleanName.length < 1) return;
 
-    // Spinner temporal en el botón de crear
-    const btn = document.querySelector(`[data-action="create-channel-prompt"][data-community="${communityUuid}"]`);
+    const btn = document.querySelector(`[data-action="create-channel-prompt"]`);
     const originalHtml = btn ? btn.innerHTML : '';
     if (btn) {
         btn.innerHTML = '<div class="small-spinner" style="width:14px; height:14px; border-width:2px;"></div> Creando...';
@@ -261,7 +297,10 @@ async function handleCreateChannel(communityUuid) {
     if (res.success) {
         if (!channelsCache[communityUuid]) channelsCache[communityUuid] = [];
         channelsCache[communityUuid].push(res.channel);
-        renderChannelList(communityUuid, channelsCache[communityUuid], getRoleFromCache(communityUuid));
+        // Re-renderizar la vista actual si seguimos en ella
+        if (currentSidebarView === 'community' && currentCommunityUuid === communityUuid) {
+            renderChannelList(communityUuid, channelsCache[communityUuid], getRoleFromCache(communityUuid));
+        }
     } else {
         alert(res.message || "Error al crear canal");
         if (btn) {
@@ -282,7 +321,9 @@ async function handleDeleteChannel(channelUuid, communityUuid) {
     if (res.success) {
         if (channelsCache[communityUuid]) {
             channelsCache[communityUuid] = channelsCache[communityUuid].filter(c => c.uuid !== channelUuid);
-            renderChannelList(communityUuid, channelsCache[communityUuid], getRoleFromCache(communityUuid));
+            if (currentSidebarView === 'community' && currentCommunityUuid === communityUuid) {
+                renderChannelList(communityUuid, channelsCache[communityUuid], getRoleFromCache(communityUuid));
+            }
         }
         // Si estábamos en ese canal, volver al default
         if (window.ACTIVE_CHANNEL_UUID === channelUuid) {
@@ -304,7 +345,6 @@ async function handleSidebarUpdate(payload) {
     // Determinar el UUID correcto del chat
     let uuid = payload.community_uuid;
     
-    // Si no es comunidad, es privado.
     if (!uuid) {
          if (parseInt(payload.sender_id) === parseInt(window.USER_ID)) {
              uuid = payload.target_uuid; 
@@ -313,129 +353,86 @@ async function handleSidebarUpdate(payload) {
          }
     }
 
-    const container = document.getElementById('my-communities-list');
-    
-    // Buscar si ya existe la tarjeta
-    let existingItemWrapper = null;
-    if (uuid) {
-        existingItemWrapper = container.querySelector(`.chat-item-wrapper[data-uuid="${uuid}"]`);
-    }
-
+    // Actualizar datos en memoria primero
     let messageText = payload.message;
     if (payload.type === 'image' || (payload.attachments && payload.attachments.length > 0)) {
         messageText = '📷 Imagen';
     }
     
-    // Formato del texto de preview
     if (payload.context === 'community' && payload.sender_id != window.USER_ID) {
         messageText = `${payload.sender_username}: ${messageText}`;
     } else if (payload.sender_id == window.USER_ID) {
         messageText = `Tú: ${messageText}`;
     }
 
-    // --- CASO 1: El chat YA existe visualmente ---
-    if (existingItemWrapper) {
-        const existingItem = existingItemWrapper.querySelector('.chat-item');
-        const previewEl = existingItem.querySelector('.chat-item-preview');
-        const timeEl = existingItem.querySelector('.chat-item-time');
+    // Actualizar el item en sidebarItems
+    const dataItem = sidebarItems.find(i => i.uuid === uuid);
+    
+    // Verificar si el chat/canal está activo
+    const isActiveChat = (uuid === window.ACTIVE_CHAT_UUID);
+    let isChannelActive = true;
+    if (payload.channel_uuid && window.ACTIVE_CHANNEL_UUID && payload.channel_uuid !== window.ACTIVE_CHANNEL_UUID) {
+        isChannelActive = false;
+    }
+    const windowHasFocus = document.hasFocus();
+
+    if (dataItem) {
+        dataItem.last_message = messageText;
+        dataItem.last_message_at = new Date().toISOString();
         
-        if (previewEl) {
-            previewEl.textContent = messageText;
-            if (uuid !== window.ACTIVE_CHAT_UUID) {
-                previewEl.style.fontWeight = '700';
-                previewEl.style.color = '#000';
-            }
-        }
-
-        if (timeEl) {
-            timeEl.textContent = formatChatTime(new Date());
-        }
-
-        const isActiveChat = (uuid === window.ACTIVE_CHAT_UUID);
-        
-        // Verificar si es el canal activo (si aplica)
-        let isChannelActive = true;
-        if (payload.channel_uuid && window.ACTIVE_CHANNEL_UUID && payload.channel_uuid !== window.ACTIVE_CHANNEL_UUID) {
-            isChannelActive = false;
-        }
-
-        const windowHasFocus = document.hasFocus();
-
-        // Actualizar contador si no estamos viendo ese chat/canal
         if (!isActiveChat || (isActiveChat && !isChannelActive) || !windowHasFocus) {
-            let badge = existingItem.querySelector('.unread-counter');
-            if (!badge) {
-                const actionsContainer = existingItem.querySelector('.chat-item-actions');
-                if (actionsContainer) {
-                    badge = document.createElement('div');
-                    badge.className = 'unread-counter';
-                    badge.textContent = '1';
-                    actionsContainer.prepend(badge);
-                }
-            } else {
-                let count = parseInt(badge.textContent) || 0;
-                badge.textContent = count + 1 > 99 ? '99+' : count + 1;
-            }
-        }
-
-        // Mover arriba visualmente
-        if (existingItemWrapper.style.display !== 'none') {
-            container.prepend(existingItemWrapper);
+            dataItem.unread_count = (parseInt(dataItem.unread_count) || 0) + 1;
         }
         
-        // Actualizar datos en memoria
-        const dataItem = sidebarItems.find(i => i.uuid === uuid);
-        if (dataItem) {
-            dataItem.last_message = messageText;
-            dataItem.last_message_at = new Date().toISOString();
-            if (!isActiveChat || !isChannelActive || !windowHasFocus) {
-                dataItem.unread_count = (parseInt(dataItem.unread_count) || 0) + 1;
-            }
-            sidebarItems = sidebarItems.filter(i => i.uuid !== uuid);
-            sidebarItems.unshift(dataItem);
-        }
-
+        // Mover al inicio
+        sidebarItems = sidebarItems.filter(i => i.uuid !== uuid);
+        sidebarItems.unshift(dataItem);
     } else {
-        // --- CASO 2: Nuevo ---
-        if (uuid) {
-            let displayName, displayPfp, displayRole;
-            let needsFetch = false;
+        // Crear nuevo item si no existe
+        let displayName, displayPfp, displayRole;
+        let needsFetch = false;
 
-            if (payload.context === 'community') {
-                needsFetch = true;
+        if (payload.context === 'community') {
+            needsFetch = true;
+        } else {
+            if (parseInt(payload.sender_id) !== parseInt(window.USER_ID)) {
+                displayName = payload.sender_username;
+                displayPfp = payload.sender_profile_picture;
+                displayRole = payload.sender_role;
             } else {
-                if (parseInt(payload.sender_id) !== parseInt(window.USER_ID)) {
-                    displayName = payload.sender_username;
-                    displayPfp = payload.sender_profile_picture;
-                    displayRole = payload.sender_role;
-                } else {
-                    needsFetch = true;
-                }
+                needsFetch = true;
             }
-
-            if (needsFetch) {
-                 fetchCommunityInfo(uuid, payload, messageText);
-                 return; 
-            }
-
-            const newItem = {
-                uuid: uuid,
-                name: displayName || 'Usuario',
-                profile_picture: displayPfp,
-                type: payload.context,
-                role: displayRole || 'user',
-                last_message: messageText,
-                last_message_at: payload.created_at || new Date().toISOString(),
-                unread_count: (parseInt(payload.sender_id) !== parseInt(window.USER_ID)) ? 1 : 0,
-                is_pinned: 0,
-                is_favorite: 0,
-                is_blocked_by_me: 0
-            };
-
-            sidebarItems.unshift(newItem);
-            const html = renderChatListItem(newItem);
-            container.insertAdjacentHTML('afterbegin', html);
         }
+
+        if (needsFetch) {
+             fetchCommunityInfo(uuid, payload, messageText);
+             return; 
+        }
+
+        const newItem = {
+            uuid: uuid,
+            name: displayName || 'Usuario',
+            profile_picture: displayPfp,
+            type: payload.context,
+            role: displayRole || 'user',
+            last_message: messageText,
+            last_message_at: payload.created_at || new Date().toISOString(),
+            unread_count: (parseInt(payload.sender_id) !== parseInt(window.USER_ID)) ? 1 : 0,
+            is_pinned: 0,
+            is_favorite: 0,
+            is_blocked_by_me: 0
+        };
+        sidebarItems.unshift(newItem);
+    }
+
+    // DECIDIR SI RENDERIZAR
+    if (currentSidebarView === 'main') {
+        // Si estamos en la lista principal, re-renderizamos para actualizar orden y badges
+        renderSidebarList();
+    } else if (currentSidebarView === 'community') {
+        // Si estamos dentro de una comunidad, NO re-renderizamos la lista principal.
+        // Pero si el mensaje es de ESTA comunidad, tal vez necesitemos actualizar badges de canales (si tuviéramos badges por canal en la API).
+        // Por ahora, si llega un DM mientras estamos en comunidad, solo se actualiza el dato en memoria.
     }
 }
 
@@ -461,13 +458,8 @@ async function fetchCommunityInfo(uuid, payload, messageText) {
             
             if (!sidebarItems.find(i => i.uuid === newItem.uuid)) {
                 sidebarItems.unshift(newItem);
-                const html = renderChatListItem(newItem);
-                const container = document.getElementById('my-communities-list');
-                if (container) container.insertAdjacentHTML('afterbegin', html);
-                
-                if (window.ACTIVE_CHAT_UUID === newItem.uuid) {
-                    const newEl = document.getElementById(`sidebar-item-${newItem.uuid}`);
-                    if(newEl) newEl.classList.add('active');
+                if (currentSidebarView === 'main') {
+                    renderSidebarList();
                 }
             }
         }
@@ -479,58 +471,23 @@ async function loadSidebarList(shouldOpenActive = false) {
     
     if (res.success) {
         sidebarItems = res.list;
-        renderSidebarList();
     } else {
         sidebarItems = [];
-        renderSidebarList();
     }
 
     if (window.ACTIVE_CHAT_UUID) {
-        // Marcar comunidad como activa
-        const activeEl = document.getElementById(`sidebar-item-${window.ACTIVE_CHAT_UUID}`);
-        if (activeEl) {
-            activeEl.classList.add('active');
-            activeEl.querySelector('.unread-counter')?.remove();
-            
-            // Si es comunidad, expandir
-            if (activeEl.dataset.type === 'community') {
-                const channelsList = document.getElementById(`channels-${window.ACTIVE_CHAT_UUID}`);
-                if (channelsList) {
-                    channelsList.classList.remove('d-none');
-                    const icon = activeEl.querySelector('.expand-icon');
-                    if(icon) icon.style.transform = 'rotate(180deg)';
-                    
-                    // [FIX] Esperar a cargar canales si no están
-                    if (!channelsCache[window.ACTIVE_CHAT_UUID]) {
-                        await loadChannels(window.ACTIVE_CHAT_UUID);
-                    } else {
-                        renderChannelList(window.ACTIVE_CHAT_UUID, channelsCache[window.ACTIVE_CHAT_UUID], getRoleFromCache(window.ACTIVE_CHAT_UUID));
-                    }
-                    
-                    // Marcar canal activo si existe, o default
-                    let currentCh = window.ACTIVE_CHANNEL_UUID;
-                    if (!currentCh && channelsCache[window.ACTIVE_CHAT_UUID]) {
-                         // Si no hay canal activo definido, pero estamos abriendo, buscar default
-                         // Nota: Esto es visual solo, el openChat real ocurre abajo
-                         const def = channelsCache[window.ACTIVE_CHAT_UUID].find(c => c.name.toLowerCase() === 'general') || channelsCache[window.ACTIVE_CHAT_UUID][0];
-                         if (def) currentCh = def.uuid;
-                    }
-
-                    if (currentCh) {
-                        const chEl = channelsList.querySelector(`.channel-item[data-uuid="${currentCh}"]`);
-                        if(chEl) chEl.classList.add('active');
-                    }
-                }
-            }
-        }
-
         const itemData = sidebarItems.find(c => c.uuid === window.ACTIVE_CHAT_UUID);
-        if (shouldOpenActive && itemData) {
-            // [FIX RELOAD] Inyectar canal default si es comunidad y no hay canal activo definido
+        
+        if (itemData) {
+            // Si es comunidad, entrar directamente a la vista de comunidad
             if (itemData.type === 'community') {
+                 // [FIX] Cargar canales primero para determinar default
+                 if (!channelsCache[window.ACTIVE_CHAT_UUID]) {
+                     await loadChannels(window.ACTIVE_CHAT_UUID);
+                 }
                  const channels = channelsCache[window.ACTIVE_CHAT_UUID] || [];
-                 let targetCh = null;
                  
+                 let targetCh = null;
                  if (window.ACTIVE_CHANNEL_UUID) {
                      targetCh = channels.find(c => c.uuid === window.ACTIVE_CHANNEL_UUID);
                  }
@@ -543,9 +500,26 @@ async function loadSidebarList(shouldOpenActive = false) {
                      itemData.channel_name = targetCh.name;
                      window.ACTIVE_CHANNEL_UUID = targetCh.uuid;
                  }
+
+                 // Renderizar la vista de comunidad
+                 renderCommunityView(window.ACTIVE_CHAT_UUID);
+                 
+                 // Abrir chat
+                 if (shouldOpenActive) {
+                     openChat(window.ACTIVE_CHAT_UUID, itemData);
+                 }
+            } else {
+                // Si es privado, renderizar lista principal
+                renderSidebarList();
+                if (shouldOpenActive) {
+                    openChat(window.ACTIVE_CHAT_UUID, itemData);
+                }
             }
-            openChat(window.ACTIVE_CHAT_UUID, itemData || null);
+        } else {
+            renderSidebarList();
         }
+    } else {
+        renderSidebarList();
     }
 }
 
@@ -662,6 +636,7 @@ async function leaveCommunity(uuid) {
     const res = await postJson('api/communities_handler.php', { action: 'leave_community', uuid: uuid });
     if (res.success) {
         if(window.alertManager) window.alertManager.showAlert(res.message, 'success');
+        // Si estamos en el grupo, volver al inicio
         if (window.ACTIVE_CHAT_UUID === uuid) {
              window.ACTIVE_CHAT_UUID = null;
              if(window.navigateTo) window.navigateTo('main'); else window.location.href = window.BASE_PATH + 'main';
@@ -783,9 +758,7 @@ function initListListeners() {
             const uuid = channelItem.dataset.uuid;
             const commUuid = channelItem.dataset.community;
             
-            // Obtener datos de la comunidad para openChat
             const commItem = sidebarItems.find(i => i.uuid === commUuid);
-            
             // Inyectar datos del canal
             const chatData = { ...commItem, channel_uuid: uuid, channel_name: channelItem.querySelector('.channel-name').innerText };
             
@@ -811,7 +784,8 @@ function initListListeners() {
         if (deleteChBtn) {
             e.stopPropagation();
             const chUuid = deleteChBtn.dataset.uuid;
-            const commUuid = deleteChBtn.closest('.channels-list-container').id.replace('channels-', '');
+            // Buscar el community uuid del contenedor o del item de canal
+            const commUuid = deleteChBtn.closest('.channel-item').dataset.community;
             handleDeleteChannel(chUuid, commUuid);
             return;
         }
@@ -823,76 +797,30 @@ function initListListeners() {
             const type = item.dataset.type; 
 
             if (type === 'community') {
-                // Toggle Accordion
-                const chList = document.getElementById(`channels-${uuid}`);
-                const icon = item.querySelector('.expand-icon');
+                // [MODIFICADO] Entrar a la vista de comunidad
+                renderCommunityView(uuid);
                 
-                if (chList) {
-                    if (chList.classList.contains('d-none')) {
-                        chList.classList.remove('d-none');
-                        if(icon) icon.style.transform = 'rotate(180deg)';
-                        // Cargar canales si no están
-                        if (chList.dataset.loaded !== "true") {
-                             // [MODIFICADO] No bloquear visualmente, pero asegurarse que se carguen
-                             loadChannels(uuid);
-                        }
-                    } else {
-                        // Si ya está abierto y es la misma comunidad activa, solo colapsamos
-                        if (window.ACTIVE_CHAT_UUID !== uuid) { 
-                             // Si no es la activa, no colapsamos, permitimos el cambio de chat
-                        } else {
-                             chList.classList.add('d-none');
-                             if(icon) icon.style.transform = 'rotate(0deg)';
-                        }
-                    }
+                // Seleccionar canal default
+                const channels = channelsCache[uuid] || [];
+                let targetChannel = null;
+                if (channels.length > 0) {
+                     targetChannel = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
                 }
                 
-                // --- LOGICA DE SELECCIÓN AUTOMÁTICA DE CANAL ---
-                if (window.ACTIVE_CHAT_UUID !== uuid) {
-                    // 1. Verificar si tenemos los canales en caché
-                    if (!channelsCache[uuid]) {
-                        // Si no están, ESPERAMOS a que carguen antes de abrir el chat
-                        await loadChannels(uuid);
-                    }
-
-                    // 2. Obtener el canal por defecto (General o el primero)
-                    const channels = channelsCache[uuid] || [];
-                    let targetChannel = null;
+                const itemData = sidebarItems.find(c => c.uuid === uuid);
+                if (itemData && targetChannel) {
+                    itemData.channel_uuid = targetChannel.uuid;
+                    itemData.channel_name = targetChannel.name;
+                    window.ACTIVE_CHANNEL_UUID = targetChannel.uuid;
                     
-                    if (channels.length > 0) {
-                        // Intentar buscar 'General' (case insensitive), si no, el primero
-                        targetChannel = channels.find(c => c.name.toLowerCase() === 'general') || channels[0];
-                    }
+                    openChat(uuid, itemData);
                     
-                    const itemData = sidebarItems.find(c => c.uuid === uuid);
-                    
-                    if (itemData) {
-                        // 3. Inyectar datos del canal para que el header se renderice bien
-                        if (targetChannel) {
-                            itemData.channel_uuid = targetChannel.uuid;
-                            itemData.channel_name = targetChannel.name;
-                            
-                            // Establecer globalmente para que el renderizado visual lo marque activo
-                            window.ACTIVE_CHANNEL_UUID = targetChannel.uuid;
-                        } else {
-                            itemData.channel_uuid = null;
-                            itemData.channel_name = null;
-                        }
-
-                        // 4. Abrir el chat con los datos completos
-                        openChat(uuid, itemData);
-
-                        // 5. Actualizar visualmente la clase .active en la lista de canales
-                        if (targetChannel && chList) {
-                            setTimeout(() => {
-                                chList.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
-                                const activeCh = chList.querySelector(`.channel-item[data-uuid="${targetChannel.uuid}"]`);
-                                if (activeCh) activeCh.classList.add('active');
-                            }, 50);
-                        }
-                    }
+                    // Marcar activo en la lista recién renderizada
+                    setTimeout(() => {
+                        const chEl = document.querySelector(`.channel-item[data-uuid="${targetChannel.uuid}"]`);
+                        if(chEl) chEl.classList.add('active');
+                    }, 50);
                 }
-                // -----------------------
 
             } else {
                 // Chat Privado
@@ -901,8 +829,17 @@ function initListListeners() {
             }
         }
     });
+    
+    // [NUEVO] Botón de "Atrás" del sidebar (Drill-down)
+    document.getElementById('chat-sidebar-panel')?.addEventListener('click', (e) => {
+         const backBtn = e.target.closest('#btn-sidebar-back');
+         if (backBtn) {
+             renderSidebarList();
+         }
+    });
 
     document.body.addEventListener('click', async (e) => {
+        // Listeners de botones flotantes (unirse, bloquear, etc.) se mantienen igual...
         const joinBtn = e.target.closest('[data-action="join-public-community"]');
         if (joinBtn) {
             const id = joinBtn.dataset.id;
@@ -983,7 +920,6 @@ function initListListeners() {
 
     document.addEventListener('socket-message', (e) => {
         const { type, payload } = e.detail;
-        
         if (type === 'new_chat_message' || type === 'private_message') {
             handleSidebarUpdate(payload);
         }
@@ -991,21 +927,50 @@ function initListListeners() {
 
     document.addEventListener('local-chat-read', (e) => {
         const uuid = e.detail.uuid;
-        const item = document.querySelector(`.chat-item[data-uuid="${uuid}"]`);
-        
-        if (item) {
-            const badge = item.querySelector('.unread-counter');
-            if (badge) badge.remove();
-            
-            const preview = item.querySelector('.chat-item-preview');
-            if (preview) {
-                preview.style.fontWeight = 'normal';
-                preview.style.color = '';
+        // Solo actualizamos si estamos en la vista principal y el item es visible
+        if (currentSidebarView === 'main') {
+            const item = document.querySelector(`.chat-item[data-uuid="${uuid}"]`);
+            if (item) {
+                const badge = item.querySelector('.unread-counter');
+                if (badge) badge.remove();
+                
+                const preview = item.querySelector('.chat-item-preview');
+                if (preview) {
+                    preview.style.fontWeight = 'normal';
+                    preview.style.color = '';
+                }
             }
-            
-            const dataItem = sidebarItems.find(i => i.uuid === uuid);
-            if (dataItem) dataItem.unread_count = 0;
         }
+        
+        // Actualizar dato en memoria
+        const dataItem = sidebarItems.find(i => i.uuid === uuid);
+        if (dataItem) dataItem.unread_count = 0;
+    });
+
+    // [NUEVO] Escuchar evento desde chat-manager para sincronizar sidebar
+    document.addEventListener('chat-opened', (e) => {
+        const chatData = e.detail;
+        if (chatData && chatData.type === 'community') {
+             // Si abrimos una comunidad y no estamos en su vista, renderizarla
+             if (currentSidebarView !== 'community' || currentCommunityUuid !== chatData.uuid) {
+                 renderCommunityView(chatData.uuid);
+             }
+             
+             // Marcar canal activo
+             setTimeout(() => {
+                 const channelUuid = window.ACTIVE_CHANNEL_UUID;
+                 if (channelUuid) {
+                     document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+                     const chEl = document.querySelector(`.channel-item[data-uuid="${channelUuid}"]`);
+                     if(chEl) chEl.classList.add('active');
+                 }
+             }, 50);
+        }
+    });
+    
+    // [NUEVO] Evento para resetear a la lista principal (ej: al cerrar chat)
+    document.addEventListener('reset-chat-view', () => {
+        renderSidebarList();
     });
 }
 

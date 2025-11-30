@@ -88,9 +88,7 @@ export async function openChat(uuid, chatData = null) {
             chatData = res.data || res.community;
             chatData.type = type;
             // Si no viene canal (carga directa por URL), el backend o el frontend deben decidir el default.
-            // Por ahora asumimos que el backend de communities_handler.php -> get_community_details
-            // nos daría la lista y podríamos elegir el primero, pero aquí solo tenemos info básica.
-            // Se manejará en loadChatMessages o en la actualización de UI.
+            // Se maneja en loadChatMessages o en la actualización de UI.
         } else {
             window.history.pushState({ section: 'main' }, '', window.BASE_PATH);
             return;
@@ -114,16 +112,9 @@ export async function openChat(uuid, chatData = null) {
     clearTimeout(typingTimeout);
     resetHeaderStatus(chatData.type === 'private');
 
-    document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
-    const activeItem = document.querySelector(`.chat-item[data-uuid="${uuid}"]`);
-    if (activeItem) {
-        activeItem.classList.add('active');
-        const badge = activeItem.querySelector('.unread-counter');
-        if(badge) badge.remove();
-        
-        const preview = activeItem.querySelector('.chat-item-preview');
-        if(preview) { preview.style.fontWeight = 'normal'; preview.style.color = ''; }
-    }
+    // [MODIFICADO] Delegar la actualización del Sidebar (Drill-down) al communities-manager
+    // Ya no manipulamos .chat-item aquí directamente porque el item podría no existir en la vista actual (ej: dentro de una comunidad).
+    document.dispatchEvent(new CustomEvent('chat-opened', { detail: chatData }));
 
     updateChatInterface(chatData);
     loadChatMessages(uuid, currentChatType, true);
@@ -836,12 +827,16 @@ function initListeners() {
         if (e.target.closest('#btn-back-to-list')) {
             const layout = document.querySelector('.chat-layout-container');
             if (layout) layout.classList.remove('chat-active');
-            document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
+            // No limpiamos .active aquí porque en drill-down la comunidad sigue seleccionada visualmente
             window.ACTIVE_CHAT_UUID = null;
-            window.ACTIVE_CHANNEL_UUID = null; // [NUEVO]
+            window.ACTIVE_CHANNEL_UUID = null; 
             currentChatUuid = null;
-            currentChannelUuid = null; // [NUEVO]
+            currentChannelUuid = null; 
             currentChatId = null; 
+            
+            // Resetear vista de sidebar
+            document.dispatchEvent(new CustomEvent('reset-chat-view'));
+            
             window.history.pushState({ section: 'main' }, '', window.BASE_PATH);
         }
         
